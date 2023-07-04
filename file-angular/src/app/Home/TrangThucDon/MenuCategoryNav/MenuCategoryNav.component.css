@@ -1,0 +1,14 @@
+.item-cate,.item-cate a{
+    list-style: none;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+  }
+  .ul-item{
+    text-decoration: none;
+  }
+  .card-header{
+    background-color:#db3d23;
+    color: white;
+    font-weight: bold;
+  }

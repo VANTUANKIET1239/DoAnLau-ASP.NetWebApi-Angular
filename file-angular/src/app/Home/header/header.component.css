@@ -6,9 +6,10 @@
     box-sizing: border-box;
 }
 nav{
-    background: #f08080;
+    background: #db3d23;
     height: 80px;
     width: 100%;
+    z-index: 10000;
 }
  label.logo{
     color:white;
@@ -32,6 +33,7 @@ nav{
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
+    font-weight: bold;
     text-transform: uppercase;
  }
 
@@ -85,9 +87,12 @@ nav{
         font-size: 20px;
     }
     a:hover{
-      background: #f08080;
+      background: #db3d23;
     }
     #check:checked ~ ul{
         left: 0;
     }
+}
+.icon-home:hover{
+    background: none;
 }

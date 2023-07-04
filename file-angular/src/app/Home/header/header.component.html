@@ -4,17 +4,25 @@
     <label for="check" class="checkbtn">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </label>
-    <label class="logo"><i class='bx bxs-hot' style='color:white'></i> LẨU</label>
+    <a class="icon-home" routerLink="/TrangChu"><label class="logo"><i class='bx bxs-hot' style='color:white'></i> LẨU</label></a>
     <ul >
-        <li ><a class="active" href="#">Ưu Đãi</a></li>
-        <li ><a href="#">Thực Đơn</a></li>
+        <li ><a routerLink="/UuDai">Ưu Đãi</a></li>
+        <li ><a routerLink="/ThucDon">Thực Đơn</a></li>
         <li ><a href="#">Đặt Bàn</a></li>
         <li ><a href="#">Đặt Hàng</a></li>
-        <li >            
+        <li style="line-height: 20px;">            
+            <ng-container *ngIf="false; then dangnhaproi else chuadangnhap"></ng-container>
+        </li>
+        <li >              
             <a href="#"><i class='bx bx-cart-alt' style='color: white;'></i> (5) Giỏ Hàng</a>
         </li>
-        <li>            
-            
-        </li>
+        
     </ul>
 </nav>
+
+<ng-template #dangnhaproi>
+    <app-dropdown-user></app-dropdown-user>
+</ng-template>
+<ng-template #chuadangnhap>
+    <a routerLink="/DangNhap">Đăng nhập/Đăng ký</a>
+</ng-template>

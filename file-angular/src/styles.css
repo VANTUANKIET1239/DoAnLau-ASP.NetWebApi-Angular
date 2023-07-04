@@ -1,6 +1,7 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "~boxicons/css/boxicons.min.css";
 
+
 body{
     min-height: 100vh;
     display: flex;
@@ -15,3 +16,6 @@ footer{
     margin-top: auto;
 }
 
+.active{
+    color: #f08080 !important;
+}

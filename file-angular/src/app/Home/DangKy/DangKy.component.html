@@ -1,0 +1,61 @@
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img style="width: 550px;height: 768px;" src="https://cmsbrandwebsites.ggg.com.vn/wp-content/uploads/2022/06/hutong-homepage-1.jpeg"
+          class="img-fluid" alt="Phone image">
+      </div>
+        <ng-container *ngTemplateOutlet="dangkyform"> </ng-container>
+    </div>
+  </div>
+</section>
+
+
+<ng-template #dangkyform>
+  <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" >
+    <h3 class="mb-5">Đăng Ký</h3>
+    <form>          <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="form1Example13" class="form-control form-control-lg" />
+        <label class="form-label" for="form1Example13">Email</label>
+      </div>
+  
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example13" class="form-control form-control-lg" />
+        <label class="form-label" for="form1Example13">Họ Tên</label>
+      </div>
+  
+      <div class="form-outline mb-4">
+        <input  id="form1Example13" class="form-control form-control-lg" />
+        <label class="form-label" for="form1Example13">Số Điện Thoại</label>
+      </div>
+  
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example23" class="form-control form-control-lg" />
+        <label class="form-label" for="form1Example23">Mật Khẩu</label>
+      </div>
+  
+      <div class="form-outline mb-4">
+        <input type="password" id="form1Example13" class="form-control form-control-lg" />
+        <label class="form-label" for="form1Example13">Xác Nhận Mật Khẩu</label>
+      </div>
+      <!-- Password input -->
+    
+  
+      <div class="d-flex justify-content-around align-items-center mb-4">
+        <!-- Checkbox -->
+        <a href="#!" style="color: black;">Bạn quên mật khẩu?</a>
+      </div>
+  
+      <!-- Submit button -->
+      <button style="background-color: #808080;color: white;font-weight: bold;" type="submit" class="btn btn-lg btn-block w-100">Đăng Ký</button>
+  
+      <div class="divider d-flex align-items-center my-4">
+        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+      </div>
+  
+      <a routerLink="/DangNhap" id="btndangky"  class="btn btn-lg btn-block w-100">Đăng Nhập</a>
+    
+    </form>
+  </div>
+</ng-template>
