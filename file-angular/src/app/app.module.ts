@@ -16,6 +16,13 @@ import { DangKyComponent } from './Home/DangKy/DangKy.component';
 import { TrangUuDaiComponent } from './Home/TrangUuDai/TrangUuDai.component';
 import { TrangChiTietUuDaiComponent } from './Home/TrangChiTietUuDai/TrangChiTietUuDai.component';
 import { CuaHangPopUpComponent } from './Home/TrangChiTietUuDai/CuaHangPopUp/CuaHangPopUp.component';
+import { DoiUuDaiPopUpComponent } from './Home/TrangChiTietUuDai/DoiUuDaiPopUp/DoiUuDaiPopUp.component';
+import { TrangTinTucComponent } from './Home/TinTuc/TrangTinTuc/TrangTinTuc.component';
+import { ChiTietTinTucComponent } from './Home/TinTuc/ChiTietTinTuc/ChiTietTinTuc.component';
+import { TrangGioHangComponent } from './Home/TrangGioHang/TrangGioHang.component';
+import { DatMonComponent } from './Home/DatMon/DatMon.component';
+import { DoiMauBtnDirective } from './Directives/DoiMauBtn.directive';
+import { CuonTrangDirective } from './Directives/CuonDenIdCate/CuonTrang.directive';
 
 
 
@@ -36,7 +43,14 @@ import { CuaHangPopUpComponent } from './Home/TrangChiTietUuDai/CuaHangPopUp/Cua
     DangKyComponent,
     TrangUuDaiComponent,
     TrangChiTietUuDaiComponent,
-    CuaHangPopUpComponent
+    CuaHangPopUpComponent,
+    DoiUuDaiPopUpComponent,
+    TrangTinTucComponent,
+    ChiTietTinTucComponent,
+    TrangGioHangComponent,
+    DatMonComponent,
+    DoiMauBtnDirective,
+    CuonTrangDirective
 
   ],
   imports: [

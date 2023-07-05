@@ -1,23 +1,23 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appDoiMauChu]'
 })
 export class DoiMauChuDirective {
 
+  @Input() public appDoiMauChu:string = '';
   constructor(private elementRef: ElementRef<HTMLElement>) { 
     
   }
   @HostListener('click') onClick() {
     const clickedElement = this.elementRef.nativeElement;
-    const allLinks = document.querySelectorAll('.a-cate');
+    const allLinks = document.querySelectorAll(`.${this.appDoiMauChu}`);
     
-    // Loại bỏ lớp 'active' cho tất cả các thẻ <a>
+    
     allLinks.forEach(link => {
-        link.classList.remove('active')
+        link.classList.remove('active');
     });
 
-    // Thêm lớp 'active' cho thẻ <a> được nhấp vào
     clickedElement.classList.add('active');
   }
 }

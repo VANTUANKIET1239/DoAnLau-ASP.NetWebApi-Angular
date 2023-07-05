@@ -7,14 +7,15 @@
     <a class="icon-home" routerLink="/TrangChu"><label class="logo"><i class='bx bxs-hot' style='color:white'></i> LẨU</label></a>
     <ul >
         <li ><a routerLink="/UuDai">Ưu Đãi</a></li>
+        <li ><a routerLink="/TinTuc">Tin Tức</a></li>
         <li ><a routerLink="/ThucDon">Thực Đơn</a></li>
         <li ><a href="#">Đặt Bàn</a></li>
-        <li ><a href="#">Đặt Hàng</a></li>
+        <li ><a routerLink ="/DatMon">Đặt Món</a></li>
         <li style="line-height: 20px;">            
             <ng-container *ngIf="false; then dangnhaproi else chuadangnhap"></ng-container>
         </li>
         <li >              
-            <a href="#"><i class='bx bx-cart-alt' style='color: white;'></i> (5) Giỏ Hàng</a>
+            <a routerLink="/GioHang"><i class='bx bx-cart-alt' style='color: white;'></i> (5) Giỏ Hàng</a>
         </li>
         
     </ul>

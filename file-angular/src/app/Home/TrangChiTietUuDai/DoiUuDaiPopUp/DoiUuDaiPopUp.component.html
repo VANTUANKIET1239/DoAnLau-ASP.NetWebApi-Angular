@@ -1,0 +1,32 @@
+<div id="bg-modal">
+  <div id="bg-content" style="padding: 0 !important;">
+
+    <div class="d-flex flex-column justify-content-center">
+      <div id="title-popup" class="d-flex flex-row align-items-center justify-content-between">
+        <h3 class="text-light text-center m-1 ms-2">Đổi ưu đãi</h3>
+        <div class="m-2">
+          <button (click)="hidepopup()" id="x-click" class="btn btn-primary"><i class="bx bx-x bx-lg"></i></button>
+        </div>
+      </div>
+      <div class="p-3 text-medium">
+        <p>Bạn có muốn đổi <strong> 50000 Gcoin</strong> để lấy Vouncher 50.000 VNĐ ?</p>
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <th>Số Gcoin đổi: </th>
+              <td class="text-end">50.000</td>
+            </tr>
+            <tr>
+              <th>Số Gcoin còn lại: </th>
+              <td class="text-end">100.000</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex flex-row justify-content-end">
+          <button (click)="hidepopup()" class="btn btn-outline-secondary me-2" style="font-weight: bold;" id="btnhuy">Hủy</button>
+          <button class="btn" id="btnxacnhan">Xác Nhận</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

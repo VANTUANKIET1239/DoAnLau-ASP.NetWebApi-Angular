@@ -8,17 +8,31 @@ import { Component, OnInit } from '@angular/core';
 export class TrangChiTietUuDaiComponent implements OnInit {
 
   constructor() { }
-  public ispopup = false;
+  public ispopupCH = false;
+  public ispopupUuDai = false;
   public isScrollLocked = false;
+  
   ngOnInit() {
   }
-  public popupCH(){
-    this.ispopup = true;
-    this.lockScroll();
+  public popupCH(nd:string){
+    if(nd == "CH"){
+      this.ispopupCH = true;
+      this.lockScroll();
+     }
+     else {
+      this.ispopupUuDai = true;
+      this.lockScroll();
+     }     
   }
-  public popupCHhide(){     
-        this.ispopup = false;
-        this.unlockScroll();          
+  public popupCHhide(nd:string){     
+       if(nd == "CH"){
+        this.ispopupCH = false;
+        this.unlockScroll();
+       }
+       else {
+        this.ispopupUuDai = false;
+        this.unlockScroll();
+       }          
   }
   public lockScroll() {
     this.isScrollLocked = true;

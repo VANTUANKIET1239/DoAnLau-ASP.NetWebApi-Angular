@@ -19,6 +19,7 @@
     max-height: 600px;
     scrollbar-width: thin; 
     scrollbar-color: #f08080 transparent; 
+  
 }
 #bg-content::-webkit-scrollbar {
     width: 6px; /* Đặt chiều rộng của thanh cuộn */
@@ -39,3 +40,4 @@
   border: none;
   padding: 0;
 }
+
