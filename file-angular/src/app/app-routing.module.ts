@@ -10,6 +10,8 @@ import { TrangTinTucComponent } from './Home/TinTuc/TrangTinTuc/TrangTinTuc.comp
 import { ChiTietTinTucComponent } from './Home/TinTuc/ChiTietTinTuc/ChiTietTinTuc.component';
 import { TrangGioHangComponent } from './Home/TrangGioHang/TrangGioHang.component';
 import { DatMonComponent } from './Home/DatMon/DatMon.component';
+import { GiaoDienCaNhanComponent } from './Home/GiaoDienCaNhan/GiaoDienCaNhan.component';
+import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,12 @@ const routes: Routes = [
   {path:'DangKy', component:DangKyComponent,pathMatch:'full' },
   {path:'TinTuc', component:TrangTinTucComponent,pathMatch:'full' },
   {path:'ChiTietTinTuc', component:ChiTietTinTucComponent },
-  {path:'DatMon', component:DatMonComponent },
+  {path:'DatMon', component:DatMonComponent,pathMatch:'full' },
+  {path:'User', component:GiaoDienCaNhanComponent, 
+    children:[
+    {path:'ThongTinCaNhan', component:ThongTinCaNhanComponent },
+    ] 
+  },
   {path:'UuDai', component:TrangUuDaiComponent,pathMatch:'full' },
   {path:'GioHang', component:TrangGioHangComponent,pathMatch:'full' },
   {path:'ChiTietUuDai', component:TrangChiTietUuDaiComponent,pathMatch:'full' },

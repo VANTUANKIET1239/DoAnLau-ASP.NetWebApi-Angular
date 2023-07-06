@@ -23,6 +23,9 @@ import { TrangGioHangComponent } from './Home/TrangGioHang/TrangGioHang.componen
 import { DatMonComponent } from './Home/DatMon/DatMon.component';
 import { DoiMauBtnDirective } from './Directives/DoiMauBtn.directive';
 import { CuonTrangDirective } from './Directives/CuonDenIdCate/CuonTrang.directive';
+import { GiaoDienCaNhanComponent } from './Home/GiaoDienCaNhan/GiaoDienCaNhan.component';
+import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
+
 
 
 
@@ -50,7 +53,9 @@ import { CuonTrangDirective } from './Directives/CuonDenIdCate/CuonTrang.directi
     TrangGioHangComponent,
     DatMonComponent,
     DoiMauBtnDirective,
-    CuonTrangDirective
+    CuonTrangDirective,
+    GiaoDienCaNhanComponent,
+    ThongTinCaNhanComponent
 
   ],
   imports: [

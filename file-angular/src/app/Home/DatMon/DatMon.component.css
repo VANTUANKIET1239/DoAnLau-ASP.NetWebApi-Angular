@@ -10,6 +10,7 @@
     text-decoration: none;
     color:black;
     font-weight: bold;
+    cursor: pointer;
    
 }
 ul li{
@@ -32,4 +33,49 @@ ul li{
     cursor: pointer;
  
   }
- 
+  .card-monan{
+    cursor: pointer;
+  }
+  .btn-quantity{
+    border: 2px solid gray;
+  background: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #db3d23;
+  cursor: pointer;
+}
+.quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-value {
+    margin: 0 10px;
+  }
+  .gia-sp{
+    color: #db3d23;
+    font-weight: bold;
+    font-size: 20px;
+    
+  }
+
+  .btn-quantity-No{
+    background: #db3d23;
+    padding: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 600px) {
+    .custom-card {
+      position: static !important;
+    }
+  }
