@@ -1,0 +1,17 @@
+.input-text{
+    background: none;
+    border: none;
+    border-bottom: 2px solid teal;
+    box-shadow: none;
+}
+#btnluu-user{
+    background-color: #db3d23;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+}
+#btnhuy-user{
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+}
