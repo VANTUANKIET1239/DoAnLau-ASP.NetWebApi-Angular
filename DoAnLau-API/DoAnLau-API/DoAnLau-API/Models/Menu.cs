@@ -21,7 +21,7 @@ namespace DoAnLau_API.Models
         [Column(TypeName = "bit")]
         public bool state { get; set; }
 
-        public MenuCategory senuCategory { get; set; }
+        public MenuCategory menuCategory { get; set; }
 
     }
 }

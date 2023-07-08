@@ -37,6 +37,8 @@ namespace DoAnLau_API.Data
 
         public DbSet<ReservationUser> ReservationUsers { get; set; }
 
+        public DbSet<PromotionDetail> PromotionDetails { get; set; }
+
         public DbSet<PromotionDetailPromotion> PromotionDetailPromotions { get; set; }
 
         public DbSet<News> News { get; set; }

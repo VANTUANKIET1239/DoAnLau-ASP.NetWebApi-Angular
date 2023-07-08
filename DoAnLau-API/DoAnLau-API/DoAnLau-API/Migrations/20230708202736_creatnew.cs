@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DoAnLau_API.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class creatnew : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,7 @@ namespace DoAnLau_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PromotionDetail",
+                name: "PromotionDetails",
                 columns: table => new
                 {
                     promotionDetail_Id = table.Column<string>(type: "nchar(5)", nullable: false),
@@ -80,7 +80,7 @@ namespace DoAnLau_API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PromotionDetail", x => x.promotionDetail_Id);
+                    table.PrimaryKey("PK_PromotionDetails", x => x.promotionDetail_Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -169,14 +169,14 @@ namespace DoAnLau_API.Migrations
                     hotDeal = table.Column<bool>(type: "bit", nullable: false),
                     bestSaller = table.Column<bool>(type: "bit", nullable: false),
                     state = table.Column<bool>(type: "bit", nullable: false),
-                    senuCategorymenuCategory_Id = table.Column<string>(type: "nchar(5)", nullable: true)
+                    menuCategory_Id = table.Column<string>(type: "nchar(5)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Menus", x => x.nenu_Id);
                     table.ForeignKey(
-                        name: "FK_Menus_MenuCategories_senuCategorymenuCategory_Id",
-                        column: x => x.senuCategorymenuCategory_Id,
+                        name: "FK_Menus_MenuCategories_menuCategory_Id",
+                        column: x => x.menuCategory_Id,
                         principalTable: "MenuCategories",
                         principalColumn: "menuCategory_Id");
                 });
@@ -217,9 +217,9 @@ namespace DoAnLau_API.Migrations
                 {
                     table.PrimaryKey("PK_PromotionDetailPromotions", x => new { x.promotion_Id, x.promotionDetail_Id });
                     table.ForeignKey(
-                        name: "FK_PromotionDetailPromotions_PromotionDetail_promotion_Id",
+                        name: "FK_PromotionDetailPromotions_PromotionDetails_promotion_Id",
                         column: x => x.promotion_Id,
-                        principalTable: "PromotionDetail",
+                        principalTable: "PromotionDetails",
                         principalColumn: "promotionDetail_Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -388,9 +388,9 @@ namespace DoAnLau_API.Migrations
                 column: "city_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Menus_senuCategorymenuCategory_Id",
+                name: "IX_Menus_menuCategory_Id",
                 table: "Menus",
-                column: "senuCategorymenuCategory_Id");
+                column: "menuCategory_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Order_Details_order_Id",
@@ -476,7 +476,7 @@ namespace DoAnLau_API.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "PromotionDetail");
+                name: "PromotionDetails");
 
             migrationBuilder.DropTable(
                 name: "Reservations");

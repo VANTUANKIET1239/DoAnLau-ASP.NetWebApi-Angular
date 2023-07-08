@@ -161,6 +161,9 @@ namespace DoAnLau_API.Migrations
                     b.Property<bool>("hotDeal")
                         .HasColumnType("bit");
 
+                    b.Property<string>("menuCategory_Id")
+                        .HasColumnType("nchar(5)");
+
                     b.Property<string>("nenuImage")
                         .IsRequired()
                         .HasColumnType("varchar(400)");
@@ -172,15 +175,12 @@ namespace DoAnLau_API.Migrations
                     b.Property<int>("price")
                         .HasColumnType("int");
 
-                    b.Property<string>("senuCategorymenuCategory_Id")
-                        .HasColumnType("nchar(5)");
-
                     b.Property<bool>("state")
                         .HasColumnType("bit");
 
                     b.HasKey("nenu_Id");
 
-                    b.HasIndex("senuCategorymenuCategory_Id");
+                    b.HasIndex("menuCategory_Id");
 
                     b.ToTable("Menus");
                 });
@@ -356,7 +356,7 @@ namespace DoAnLau_API.Migrations
 
                     b.HasKey("promotionDetail_Id");
 
-                    b.ToTable("PromotionDetail");
+                    b.ToTable("PromotionDetails");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.PromotionDetailPromotion", b =>
@@ -516,11 +516,11 @@ namespace DoAnLau_API.Migrations
 
             modelBuilder.Entity("DoAnLau_API.Models.Menu", b =>
                 {
-                    b.HasOne("DoAnLau_API.Models.MenuCategory", "senuCategory")
+                    b.HasOne("DoAnLau_API.Models.MenuCategory", "menuCategory")
                         .WithMany("menus")
-                        .HasForeignKey("senuCategorymenuCategory_Id");
+                        .HasForeignKey("menuCategory_Id");
 
-                    b.Navigation("senuCategory");
+                    b.Navigation("menuCategory");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.Order", b =>
