@@ -8,26 +8,26 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Address_Id { get; set; }
+        public string address_Id { get; set; }
         [Column(TypeName = "nvarchar(100)")]
-        public string Name { get; set; }
+        public string name { get; set; }
         [Column(TypeName = " varchar(15)")]
-        public string Phone { get; set; }
+        public string phone { get; set; }
 
         [Column(TypeName = " varchar(100)")]
-        public string Email { get; set; }
+        public string email { get; set; }
         [Column(TypeName = "nvarchar(150)")]
-        public string AddressDetail { get; set; }
+        public string addressDetail { get; set; }
         [Column(TypeName = "nvarchar(20)")]
-        public string Ward { get; set; }
+        public string ward { get; set; }
         [Column(TypeName = "nvarchar(20)")]
-        public string District { get; set; }
+        public string district { get; set; }
         [Column(TypeName = "nvarchar(30)")]
-        public string City { get; set; }
+        public string city { get; set; }
         [Column(TypeName = "bit")]
-        public bool IsDefault { get; set; }
+        public bool isDefault { get; set; }
         [Column(TypeName = "bit")]
-        public  bool State { get; set; }
-        public User User { get; set; }
+        public  bool state { get; set; }
+        public User user { get; set; }
     }
 }

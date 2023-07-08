@@ -7,29 +7,29 @@ namespace DoAnLau_API.Models
     {      
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public  string OrderDetail_Id { get; set; }
+        public  string orderDetail_Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Order_Id { get; set; }
+        public string order_Id { get; set; }
 
 
         [Column(TypeName = "nvarchar(200)")]
-        public string MenuName { get; set; }
+        public string menuName { get; set; }
 
 
         [Column(TypeName = "varchar(300)")]
-        public string MenuImage { get; set; }
+        public string menuImage { get; set; }
 
 
-        public int Price { get; set; }
+        public int price { get; set; }
 
 
-        public int Quantity { get; set; }
+        public int quantity { get; set; }
 
 
-        public int MenuTotalPrice { get; set; }
+        public int menuTotalPrice { get; set; }
 
-        public Order Order { get; set; }
+        public Order order { get; set; }
     }
 }

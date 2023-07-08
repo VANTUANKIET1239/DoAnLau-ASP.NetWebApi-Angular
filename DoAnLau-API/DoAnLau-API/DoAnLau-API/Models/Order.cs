@@ -8,21 +8,22 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Order_Id { get; set; }
+        public string order_Id { get; set; }
 
  
-        public DateTime OrderDate { get; set; }
+        public DateTime orderDate { get; set; }
 
-        public int TotalPrice { get; set; }
-
+        public int totalPrice { get; set; }
+        [Column(TypeName = "nvarchar(400)")]
+        public string Note { get; set; }
 
         [Column(TypeName = "nvarchar(50)")]
-        public string PaymentMethod { get; set; }
-        public User User { get; set; }
+        public string paymentMethod { get; set; }
+        public User user { get; set; }
 
-        public Promotion Promotion { get; set; }
+        public Promotion promotion { get; set; }
 
-        public Order_Detail Order_Detail { get; set; }
+        public Order_Detail order_Detail { get; set; }
 
     }
 }

@@ -8,37 +8,39 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string User_Id { get; set; }
+        public string user_Id { get; set; }
 
+        public byte[]? UserImage { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
 
         [Column(TypeName = " varchar(100)")]
-        public string Email { get; set; }
+        public string email { get; set; }
 
+        public bool Gender { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public DateTime birthDate { get; set; }
 
 
         [Column(TypeName = "varchar(15)")]
-        public string Phone { get; set; }
+        public string phone { get; set; }
 
-        public int RewardPoints { get; set; }
+        public int rewardPoints { get; set; }
 
-
-        [Column(TypeName = "bit")]
-        public bool Role { get; set; }
 
         [Column(TypeName = "bit")]
-        public bool State { get; set; }
+        public bool role { get; set; }
 
-        public ICollection<PromotionUser> PromotionUsers { get; set; }
-        public ICollection<ReservationUser> ReservationUsers { get; set; }
+        [Column(TypeName = "bit")]
+        public bool state { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<PromotionUser> promotionUsers { get; set; }
+        public ICollection<ReservationUser> reservationUsers { get; set; }
 
-        public ICollection<Address> Addresses { get; set; }
+        public ICollection<Order> orders { get; set; }
+
+        public ICollection<Address> addresses { get; set; }
     }
 }

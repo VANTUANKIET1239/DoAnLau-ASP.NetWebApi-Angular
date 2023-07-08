@@ -8,28 +8,28 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Branch_Id { get; set; }
+        public string branch_Id { get; set; }
         [Column(TypeName = "nvarchar(200)")]
-        public string BranchName { get; set; }
+        public string branchName { get; set; }
         [Column(TypeName = "nvarchar(150)")]
-        public string AddressDetail { get; set; }
+        public string addressDetail { get; set; }
         [Column(TypeName = " nvarchar(20)")]
-        public string Ward { get; set; }
+        public string ward { get; set; }
         [Column(TypeName = " nvarchar(20)")]
-        public string District { get; set; }
+        public string district { get; set; }
         [Column(TypeName = "nvarchar(30)")]
-        public string City { get; set; }
+        public string city { get; set; }
         [Column(TypeName = "varchar(15)")]
-        public string Phone { get; set; }
+        public string phone { get; set; }
         [Column(TypeName = "varchar(100)")]
-        public string Email { get; set; }
+        public string email { get; set; }
         [Column(TypeName = "varchar(20)")]
-        public string OpeningTime { get; set; }
+        public string openingTime { get; set; }
 
         [Column(TypeName = "bit")]
-        public bool State { get; set; }
+        public bool state { get; set; }
 
-        public ICollection<PromotionBranch> PromotionBranches { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public ICollection<PromotionBranch> promotionBranches { get; set; }
+        public ICollection<Reservation> reservations { get; set; }
     }
 }

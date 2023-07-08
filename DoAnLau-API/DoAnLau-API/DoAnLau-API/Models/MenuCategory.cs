@@ -8,15 +8,15 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string MenuCategory_Id {  get; set; }
+        public string menuCategory_Id {  get; set; }
 
 
         [Column(TypeName = "nvarchar(100)")]
-        public string CategoryName { get; set; }
+        public string categoryName { get; set; }
 
         [Column(TypeName = "bit")]
-        public bool State { get; set; }
+        public bool state { get; set; }
 
-        public ICollection<Menu> Menus { get; set; }
+        public ICollection<Menu> menus { get; set; }
     }
 }

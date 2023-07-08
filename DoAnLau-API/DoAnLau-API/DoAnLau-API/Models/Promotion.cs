@@ -8,31 +8,33 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Promotion_Id { get; set; }
+        public string promotion_Id { get; set; }
 
+
+        [Column(TypeName = "varchar(300)")]
+        public string PromotionImage { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
-        public string PromotionName { get; set; }
+        public string promotionName { get; set; }
 
 
         [Column(TypeName = "varchar(80)")]
-        public string ValidityPeriod { get; set; }
+        public string validityPeriod { get; set; }
 
-
-
-        public DateTime ExpirationDate { get; set; }
+        public DateTime expirationDate { get; set; }
 
 
         [Column(TypeName = "nvarchar(500)")]
-        public string PromotionDetails { get; set; }
+        public string promotionDetails { get; set; }
 
 
         [Column(TypeName = "bit")]
-        public bool State { get; set; }
+        public bool state { get; set; }
 
-        public  ICollection<PromotionBranch> PromotionBranches { get; set; }
-        public ICollection<PromotionUser> PromotionUsers { get; set; }
-        
-        public ICollection<Order> Orders { get; set; }
+        public  ICollection<PromotionBranch> promotionBranches { get; set; }
+        public ICollection<PromotionUser> promotionUsers { get; set; }
+
+        public ICollection<PromotionDetailPromotion> promotionDetailPromotions { get; set; }
+        public ICollection<Order> orders { get; set; }
     }
 }

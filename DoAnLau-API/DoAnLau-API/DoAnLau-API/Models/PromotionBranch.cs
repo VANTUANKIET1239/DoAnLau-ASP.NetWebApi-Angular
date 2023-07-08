@@ -8,16 +8,17 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Promotion_Id { get; set; }
+        public string promotion_Id { get; set; }
 
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Branch_Id { get; set; }
+        public string branch_Id { get; set; }
 
-        public Promotion Promotion { get; set; }
+        public bool state { get; set; }
+        public Promotion promotion { get; set; }
 
-        public Branch Branch { get; set; }
+        public Branch branch { get; set; }
     }
 }

@@ -37,6 +37,9 @@ namespace DoAnLau_API.Data
 
         public DbSet<ReservationUser> ReservationUsers { get; set; }
 
+        public DbSet<PromotionDetailPromotion> PromotionDetailPromotions { get; set; }
+
+        public DbSet<News> News { get; set; }
         public DbSet<User> Users { get; set; }
 
         public DbSet<Ward> Wards { get; set; }
@@ -46,57 +49,72 @@ namespace DoAnLau_API.Data
 
 
             modelBuilder.Entity<Order_Detail>()
-            .HasOne(a => a.Order)
-            .WithOne(a => a.Order_Detail)
-            .HasForeignKey<Order_Detail>(c => c.Order_Id);
+            .HasOne(a => a.order)
+            .WithOne(a => a.order_Detail)
+            .HasForeignKey<Order_Detail>(c => c.order_Id);
 
 
             modelBuilder.Entity<Order_Detail>()
-          .HasKey(m => new { m.Order_Id, m.OrderDetail_Id });
+          .HasKey(m => new { m.order_Id, m.orderDetail_Id });
+
+            modelBuilder.Entity<PromotionDetailPromotion>()
+        .HasKey(m => new { m.promotion_Id, m.promotionDetail_Id });
+
+
+            modelBuilder.Entity<PromotionDetailPromotion>()
+                .HasOne(pc => pc.promotion)
+                .WithMany(c => c.promotionDetailPromotions)
+                .HasForeignKey(c => c.promotionDetail_Id);
+
+            modelBuilder.Entity<PromotionDetailPromotion>()
+                    .HasOne(pc => pc.promotionDetail)
+                    .WithMany(c => c.promotionDetailPromotions)
+                    .HasForeignKey(c => c.promotion_Id);
+        
 
             modelBuilder.Entity<PromotionBranch>()
-                .HasKey(pc => new { pc.Promotion_Id, pc.Branch_Id });
+                .HasKey(pc => new { pc.promotion_Id, pc.branch_Id });
 
             modelBuilder.Entity<PromotionBranch>()
-                .HasOne(pc => pc.Promotion)
-                .WithMany(c => c.PromotionBranches)
-                .HasForeignKey(c => c.Branch_Id);
+                .HasOne(pc => pc.promotion)
+                .WithMany(c => c.promotionBranches)
+                .HasForeignKey(c => c.branch_Id);
 
             modelBuilder.Entity<PromotionBranch>()
-                    .HasOne(pc => pc.Branch)
-                    .WithMany(c => c.PromotionBranches)
-                    .HasForeignKey(c => c.Promotion_Id);
+                    .HasOne(pc => pc.branch)
+                    .WithMany(c => c.promotionBranches)
+                    .HasForeignKey(c => c.promotion_Id);
 
 
 
             modelBuilder.Entity<PromotionUser>()
-               .HasKey(pc => new { pc.Promotion_Id, pc.User_Id });
+               .HasKey(pc => new { pc.promotion_Id, pc.user_Id });
 
             modelBuilder.Entity<PromotionUser>()
-                .HasOne(pc => pc.User)
-                .WithMany(c => c.PromotionUsers)
-                .HasForeignKey(c => c.Promotion_Id);
+                .HasOne(pc => pc.user)
+                .WithMany(c => c.promotionUsers)
+                .HasForeignKey(c => c.promotion_Id);
 
             modelBuilder.Entity<PromotionUser>()
-                    .HasOne(pc => pc.Promotion)
-                    .WithMany(c => c.PromotionUsers)
-                    .HasForeignKey(c => c.User_Id);
+                    .HasOne(pc => pc.promotion)
+                    .WithMany(c => c.promotionUsers)
+                    .HasForeignKey(c => c.user_Id);
 
 
 
 
             modelBuilder.Entity<ReservationUser>()
-              .HasKey(pc => new { pc.Reservation_Id, pc.User_Id });
+              .HasKey(pc => new { pc.reservation_Id, pc.user_Id });
 
             modelBuilder.Entity<ReservationUser>()
-                .HasOne(pc => pc.User)
-                .WithMany(c => c.ReservationUsers)
-                .HasForeignKey(c => c.Reservation_Id);
+                .HasOne(pc => pc.user)
+                .WithMany(c => c.reservationUsers)
+                .HasForeignKey(c => c.reservation_Id);
 
             modelBuilder.Entity<ReservationUser>()
-                    .HasOne(pc => pc.Reservation)
-                    .WithMany(c => c.ReservationUsers)
-                    .HasForeignKey(c => c.User_Id);
+                    .HasOne(pc => pc.reservation)
+                    .WithMany(c => c.reservationUsers)
+                    .HasForeignKey(c => c.user_Id);
         }
     }
 }

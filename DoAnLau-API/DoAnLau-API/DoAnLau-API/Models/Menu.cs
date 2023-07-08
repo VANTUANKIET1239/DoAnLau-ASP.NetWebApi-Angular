@@ -8,20 +8,20 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Menu_Id { get; set; }
+        public string nenu_Id { get; set; }
         [Column( TypeName = "nvarchar(200)")]
-        public string MenuName { get; set; }
+        public string nenuName { get; set; }
         [Column(TypeName = "varchar(400)")]
-        public string MenuImage { get; set; }
-        public int Price { get; set; }
+        public string nenuImage { get; set; }
+        public int price { get; set; }
         [Column(TypeName = "bit")]
-        public bool HotDeal { get; set; }
+        public bool hotDeal { get; set; }
         [Column(TypeName = "bit")]
-        public bool BestSaller { get; set; }
+        public bool bestSaller { get; set; }
         [Column(TypeName = "bit")]
-        public bool State { get; set; }
+        public bool state { get; set; }
 
-        public MenuCategory MenuCategory { get; set; }
+        public MenuCategory senuCategory { get; set; }
 
     }
 }

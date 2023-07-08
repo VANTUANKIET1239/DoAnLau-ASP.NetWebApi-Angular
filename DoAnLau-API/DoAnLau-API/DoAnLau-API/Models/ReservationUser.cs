@@ -8,15 +8,17 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Reservation_Id { get; set; }
+        public string reservation_Id { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string User_Id { get; set; }
+        public string user_Id { get; set; }
 
-        public Reservation Reservation { get; set; }
+        public bool state { get; set; }
 
-        public User User { get; set; }
+        public Reservation reservation { get; set; }
+
+        public User user { get; set; }
     }
 }

@@ -8,12 +8,12 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column(TypeName = "nchar(5)")]
-        public string Ward_Id { get; set; }
+        public string ward_Id { get; set; }
 
 
         [Column(TypeName = "nvarchar(20)")]
-        public string WardName { get; set;}
+        public string wardName { get; set;}
 
-        public District District { get; set; }
+        public District district { get; set; }
     }
 }
