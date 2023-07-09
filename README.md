@@ -32,7 +32,7 @@
 - Trang Đặt món
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/b290da61-588b-44d9-9ada-0e7bd314fc03)
 - Trang giỏ hàng:
-![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/c877c599-ed06-45d5-b69e-008f55f10e95)
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/f98ce020-ffc5-4e50-bdd2-662efa359312)
 - Trang thông tin cá nhân:
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/af534a6f-7e13-4a5f-88b9-b9c674723a48)
 
