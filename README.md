@@ -35,6 +35,8 @@
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/f98ce020-ffc5-4e50-bdd2-662efa359312)
 - Trang thông tin cá nhân:
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/af534a6f-7e13-4a5f-88b9-b9c674723a48)
-
+- Trang ưu đãi:
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/04e8f3f5-46f1-41f1-ac81-1f355aa27238)
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/76feda0c-899c-4340-b49d-f1d4da8fa577)
 
 
