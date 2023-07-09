@@ -25,6 +25,9 @@ import { DoiMauBtnDirective } from './Directives/DoiMauBtn.directive';
 import { CuonTrangDirective } from './Directives/CuonDenIdCate/CuonTrang.directive';
 import { GiaoDienCaNhanComponent } from './Home/GiaoDienCaNhan/GiaoDienCaNhan.component';
 import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
+import { LichSuComponent } from './Home/GiaoDienCaNhan/LichSu/LichSu.component';
+import { UuDaiCuaToiComponent } from './Home/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCuaToi.component';
+import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
 
 
 
@@ -55,7 +58,10 @@ import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/Th
     DoiMauBtnDirective,
     CuonTrangDirective,
     GiaoDienCaNhanComponent,
-    ThongTinCaNhanComponent
+    ThongTinCaNhanComponent,
+    LichSuComponent,
+    UuDaiCuaToiComponent,
+    SoDiaChiComponent,
 
   ],
   imports: [
