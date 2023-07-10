@@ -1,0 +1,15 @@
+.title-donhang{
+    font-weight: bold;
+    font-size: 18px;
+}
+img{
+    max-width: 50px; 
+    max-height: 50px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.giatien-thucdon{
+    font-size: 17px;
+    color: #db3d23;
+    font-weight: bold;
+}

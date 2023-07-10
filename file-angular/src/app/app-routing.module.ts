@@ -13,8 +13,9 @@ import { DatMonComponent } from './Home/DatMon/DatMon.component';
 import { GiaoDienCaNhanComponent } from './Home/GiaoDienCaNhan/GiaoDienCaNhan.component';
 import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
 import { UuDaiCuaToiComponent } from './Home/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCuaToi.component';
-import { LichSuComponent } from './Home/GiaoDienCaNhan/LichSu/LichSu.component';
 import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
+import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
+import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
     children:[
     {path:'ThongTinCaNhan', component:ThongTinCaNhanComponent },
     {path:'UuDaiCuaToi', component:UuDaiCuaToiComponent },
-    {path:'LichSuGiaoHang', component:LichSuComponent },
+    {path:'LichSuGiaoHang', component:LichSuGiaoHangComponent },
+    {path:'LichSuDatBan', component:LichSuDatBanComponent },
     {path:'SoDiaChi', component:SoDiaChiComponent },
     ] 
   },
