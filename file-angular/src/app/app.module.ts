@@ -29,6 +29,7 @@ import { UuDaiCuaToiComponent } from './Home/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCua
 import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
 import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
 import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
+import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
 
 
 
@@ -63,7 +64,8 @@ import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/Li
     UuDaiCuaToiComponent,
     SoDiaChiComponent,
     LichSuDatBanComponent,
-    LichSuGiaoHangComponent
+    LichSuGiaoHangComponent,
+    ChiTietLSDatHangComponent
 
   ],
   imports: [

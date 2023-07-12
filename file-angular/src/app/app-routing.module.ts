@@ -16,6 +16,7 @@ import { UuDaiCuaToiComponent } from './Home/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCua
 import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
 import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
 import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
+import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
     ] 
   },
   {path:'UuDai', component:TrangUuDaiComponent,pathMatch:'full' },
+  {path:'ChiTietGiaoHang', component:ChiTietLSDatHangComponent,pathMatch:'full' },
   {path:'GioHang', component:TrangGioHangComponent,pathMatch:'full' },
   {path:'ChiTietUuDai', component:TrangChiTietUuDaiComponent,pathMatch:'full' },
   {path:'**', component:CarouselSliderComponent,pathMatch:'full' },
