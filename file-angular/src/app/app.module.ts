@@ -30,6 +30,7 @@ import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.compo
 import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
 import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
 import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
+import { ThemDiaChiPopUpComponent } from './Home/GiaoDienCaNhan/SoDiaChi/ThemDiaChiPopUp/ThemDiaChiPopUp.component';
 
 
 
@@ -65,7 +66,8 @@ import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHan
     SoDiaChiComponent,
     LichSuDatBanComponent,
     LichSuGiaoHangComponent,
-    ChiTietLSDatHangComponent
+    ChiTietLSDatHangComponent,
+    ThemDiaChiPopUpComponent
 
   ],
   imports: [

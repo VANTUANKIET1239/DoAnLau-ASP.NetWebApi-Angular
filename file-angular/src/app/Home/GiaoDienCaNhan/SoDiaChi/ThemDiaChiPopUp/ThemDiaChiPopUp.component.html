@@ -1,0 +1,103 @@
+<div id="bg-modal">
+  <div id="bg-content" class="p-4">
+    <div class="row">
+      <div class="col-11 d-flex align-items-center">
+        <h3 style="margin: 0;">Thêm địa chỉ</h3>
+      </div>
+      <div class="col-1">
+        <button (click)="hidepopup()" id="x-click"><i class='bx bx-x bx-lg' undefined></i></button>
+      </div>
+    </div>
+    <form action="">
+      <div class="form-outline mb-3">
+        <label for="textInput">Họ và tên</label>
+        <div class="input-container">
+          <input type="text" id="textInput" class="form-control" />
+          <span class="underline"></span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="textInput">Email</label>
+            <div class="input-container">
+              <input type="email" id="textInput" class="form-control" />
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="textInput">Số điện thoại</label>
+            <div class="input-container">
+              <input type="text" id="textInput" class="form-control" />
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="textInput">Địa chỉ cụ thể</label>
+            <div class="input-container">
+              <input type="text" id="textInput" class="form-control" />
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="selectInput">Tỉnh/Thành phố</label>
+            <div class="select-container">
+              <select id="selectInput" class="form-control">
+                <option value="" selected disabled>Vui lòng chọn</option>
+                <option value="option2">Nam</option>
+                <option value="option3">Nữ</option>
+              </select>
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="selectInput">Quận/Huyện</label>
+            <div class="select-container">
+              <select id="selectInput" class="form-control">
+                <option value="" selected disabled>Vui lòng chọn</option>
+                <option value="option2">Nam</option>
+                <option value="option3">Nữ</option>
+              </select>
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-outline mb-4">
+            <label for="selectInput">Phường/Xã</label>
+            <div class="select-container">
+              <select id="selectInput" class="form-control">
+                <option value="" selected disabled>Vui lòng chọn</option>
+                <option value="option2">Nam</option>
+                <option value="option3">Nữ</option>
+              </select>
+              <span class="underline"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-4 d-flex flex-row justify-content-end">
+        <label for="isdefaultcheckbox" class="larger-checkbox">
+          <input id="isdefaultcheckbox" type="checkbox"> Mặc định
+        </label>
+      </div>
+      <div class="d-flex flex-row justify-content-end">
+        <button (click)="hidepopup()"  class="btn btn-outline-secondary me-2" style="font-weight: bold;" id="btnhuy">Hủy</button>
+        <button class="btn" id="btnxacnhan">Thêm địa chỉ</button>
+      </div>
+    </form>
+  </div>
+</div>
