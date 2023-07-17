@@ -13,14 +13,12 @@ namespace DoAnLau_API.Models
         [Column(TypeName = "nchar(5)")]
         public string order_Id { get; set; }
 
-
-        [Column(TypeName = "nvarchar(200)")]
+        /*[Column(TypeName = "nvarchar(200)")]
         public string menuName { get; set; }
 
 
         [Column(TypeName = "varchar(300)")]
-        public string menuImage { get; set; }
-
+        public string menuImage { get; set; }*/
 
         public int price { get; set; }
 
@@ -31,5 +29,7 @@ namespace DoAnLau_API.Models
         public int menuTotalPrice { get; set; }
 
         public Order order { get; set; }
+
+        public Menu menu { get; set; }
     }
 }

@@ -18,6 +18,7 @@ import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/Li
 import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
 import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
 import { TrangDatBanComponent } from './Home/TrangDatBan/TrangDatBan.component';
+import { ChiTietDatBanComponent } from './Home/ChiTietDatBan/ChiTietDatBan.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'ChiTietTinTuc', component:ChiTietTinTucComponent },
   {path:'DatMon', component:DatMonComponent,pathMatch:'full' },
   {path:'DatBan', component:TrangDatBanComponent,pathMatch:'full' },
+  {path:'ChiTietDatBan', component:ChiTietDatBanComponent,pathMatch:'full' },
   {path:'User', component:GiaoDienCaNhanComponent,
     children:[
     {path:'ThongTinCaNhan', component:ThongTinCaNhanComponent },

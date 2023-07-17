@@ -23,5 +23,7 @@ namespace DoAnLau_API.Models
 
         public MenuCategory menuCategory { get; set; }
 
+        public ICollection<Order_Detail> order_Details { get; set; }
+
     }
 }

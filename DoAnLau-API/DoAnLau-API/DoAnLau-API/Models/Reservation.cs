@@ -12,8 +12,8 @@ namespace DoAnLau_API.Models
 
         public DateTime ReservationDate { get; set; }
 
-        [Column(TypeName = "varchar(10)")]
-        public string reservationTime { get; set; }
+        [Column(TypeName = "time")]
+        public TimeSpan reservationTime { get; set; }
 
         [Column(TypeName = "bit")]
         public bool state { get; set; }

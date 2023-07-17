@@ -32,6 +32,10 @@ import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/Li
 import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
 import { ThemDiaChiPopUpComponent } from './Home/GiaoDienCaNhan/SoDiaChi/ThemDiaChiPopUp/ThemDiaChiPopUp.component';
 import { TrangDatBanComponent } from './Home/TrangDatBan/TrangDatBan.component';
+import { ChiTietDatBanComponent } from './Home/ChiTietDatBan/ChiTietDatBan.component';
+import { XacNhanPopUpComponent } from './Home/ChiTietDatBan/XacNhanPopUp/XacNhanPopUp.component';
+import { TrangThanhToanComponent } from './Home/TrangThanhToan/TrangThanhToan.component';
+import { TrangDoiMatKhauComponent } from './Home/TrangDoiMatKhau/TrangDoiMatKhau.component';
 
 
 
@@ -69,7 +73,11 @@ import { TrangDatBanComponent } from './Home/TrangDatBan/TrangDatBan.component';
     LichSuGiaoHangComponent,
     ChiTietLSDatHangComponent,
     ThemDiaChiPopUpComponent,
-    TrangDatBanComponent
+    TrangDatBanComponent,
+    ChiTietDatBanComponent,
+    XacNhanPopUpComponent,
+    TrangThanhToanComponent,
+    TrangDoiMatKhauComponent
 
   ],
   imports: [
