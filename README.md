@@ -7,7 +7,7 @@
    + Front-end: HTML/CSS, Bootstrap 5, Angular (Typescript)
    + Back-end: C#(ASP.NET CORE Web API),Entity Framework Core(Code first)
 - Database:
-![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/5c5f3127-71e7-40e6-9ed5-46238e300d31)
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/2b849701-6cc4-46ae-b8c6-be8ba2a89755)
 3. Các tính năng 
 - Giao diện Admin: CRUD thực đơn, danh mục thực đơn, chi nhánh, ưu đãi,...
 - Giao diện người dùng:
