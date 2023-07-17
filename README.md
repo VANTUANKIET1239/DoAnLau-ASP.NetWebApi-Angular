@@ -42,6 +42,12 @@
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/bdbe4b19-885c-4575-a93a-7be139bf6901)
 - Trang Ưu đãi của tôi:
 ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/d8aef06b-98e3-4050-b903-6758a3a5bb81)
+- Trang Đặt bàn:
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/e7928e80-f9d3-45d9-901b-6bb5909ce70e)
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/ba7de76a-34bf-4a6f-b16a-99c6fbbfd0f5)
+![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/eb27d406-6cf1-454c-8e94-1a0f9452c7f9)
+- Trang lịch sử giao hàng: 
+   ![image](https://github.com/VANTUANKIET1239/DoAnLau-ASP.NetWebApi-Angular/assets/114245376/0151bd07-c73a-44a9-946f-94ba28a724d2)
 
 
 
