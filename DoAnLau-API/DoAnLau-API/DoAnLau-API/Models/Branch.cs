@@ -31,5 +31,7 @@ namespace DoAnLau_API.Models
 
         public ICollection<PromotionBranch> promotionBranches { get; set; }
         public ICollection<Reservation> reservations { get; set; }
+
+        public ICollection<BranchReservationTime> branchReservationTimes { get; set; }
     }
 }

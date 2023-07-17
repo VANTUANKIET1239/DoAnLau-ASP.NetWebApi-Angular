@@ -72,7 +72,23 @@ namespace DoAnLau_API.Data
                     .HasOne(pc => pc.promotionDetail)
                     .WithMany(c => c.promotionDetailPromotions)
                     .HasForeignKey(c => c.promotion_Id);
-        
+
+
+
+            modelBuilder.Entity<BranchReservationTime>()
+        .HasKey(m => new { m.branch_Id, m.reservationTime_Id });
+
+
+            modelBuilder.Entity<BranchReservationTime>()
+                .HasOne(pc => pc.branch)
+                .WithMany(c => c.branchReservationTimes)
+                .HasForeignKey(c => c.reservationTime_Id);
+
+            modelBuilder.Entity<BranchReservationTime>()
+                    .HasOne(pc => pc.reservationTime)
+                    .WithMany(c => c.branchReservationTimes)
+                    .HasForeignKey(c => c.branch_Id);
+
 
             modelBuilder.Entity<PromotionBranch>()
                 .HasKey(pc => new { pc.promotion_Id, pc.branch_Id });
