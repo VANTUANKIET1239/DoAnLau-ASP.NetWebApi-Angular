@@ -1,4 +1,6 @@
 ﻿using DoAnLau_API.Data;
+using DoAnLau_API.Interface;
+using DoAnLau_API.Responsitory;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,9 +15,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IAccountResponsitory, AccountResponsitory>();
+
 // khởi tạo service Indentity
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(
+    options =>
+   options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -._@+!*'(),"
+    )
+    .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();    
 
 // khởi tạo service Authentication
 builder.Services.AddAuthentication(options => {

@@ -7,6 +7,6 @@ namespace DoAnLau_API.Interface
     {
         public Task<IdentityResult> SignUp(SignUpModel model);
         
-        public Task<string> SignIn();
+        public Task<string> SignIn(SignInModel model);
     }
 }
