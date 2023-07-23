@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using DoAnLau_API.Data;
 
 namespace DoAnLau_API.Models
 {
@@ -7,18 +8,18 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+        
         public string promotion_Id { get; set; }
 
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+       
         public string user_Id { get; set; }
 
         public bool state { get; set; }
         public Promotion promotion { get; set; }
 
-        public User user { get; set; }
+        public ApplicationUser user { get; set; }
     }
 }

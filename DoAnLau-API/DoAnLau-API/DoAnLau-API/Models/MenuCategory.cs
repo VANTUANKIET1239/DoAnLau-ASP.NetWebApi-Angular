@@ -7,7 +7,7 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+       
         public string menuCategory_Id {  get; set; }
 
 

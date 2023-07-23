@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DoAnLau_API.Models
 {
-    public class User
+    /*public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+      
         public string user_Id { get; set; }
 
         public byte[]? UserImage { get; set; }
@@ -42,5 +42,5 @@ namespace DoAnLau_API.Models
         public ICollection<Order> orders { get; set; }
 
         public ICollection<Address> addresses { get; set; }
-    }
+    }*/
 }

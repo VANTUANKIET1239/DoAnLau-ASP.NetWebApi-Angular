@@ -7,7 +7,7 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+     
         public string nenu_Id { get; set; }
         [Column( TypeName = "nvarchar(200)")]
         public string nenuName { get; set; }

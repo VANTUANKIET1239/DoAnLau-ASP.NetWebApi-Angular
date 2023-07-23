@@ -7,7 +7,7 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+       
         public string city_Id { get; set; }
         [Column(TypeName = "nvarchar(30)")]
         public string cityName { get; set; }

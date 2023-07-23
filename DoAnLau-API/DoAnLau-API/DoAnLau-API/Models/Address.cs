@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DoAnLau_API.Data;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DoAnLau_API.Models
@@ -7,7 +8,6 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
         public string address_Id { get; set; }
         [Column(TypeName = "nvarchar(100)")]
         public string name { get; set; }
@@ -28,6 +28,6 @@ namespace DoAnLau_API.Models
         public bool isDefault { get; set; }
         [Column(TypeName = "bit")]
         public  bool state { get; set; }
-        public User user { get; set; }
+        public ApplicationUser user { get; set; }
     }
 }

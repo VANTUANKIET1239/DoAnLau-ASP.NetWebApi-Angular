@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoAnLau_API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230716204532_createnewdb")]
-    partial class createnewdb
+    [Migration("20230723045958_newdb")]
+    partial class newdb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,10 +25,92 @@ namespace DoAnLau_API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DoAnLau_API.Data.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime>("birthdate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("gender")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rewardPoints")
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("userImage")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("DoAnLau_API.Models.Address", b =>
                 {
                     b.Property<string>("address_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("addressDetail")
                         .IsRequired()
@@ -60,9 +142,8 @@ namespace DoAnLau_API.Migrations
                     b.Property<bool>("state")
                         .HasColumnType("bit");
 
-                    b.Property<string>("user_Id")
-                        .IsRequired()
-                        .HasColumnType("nchar(5)");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ward")
                         .IsRequired()
@@ -70,7 +151,7 @@ namespace DoAnLau_API.Migrations
 
                     b.HasKey("address_Id");
 
-                    b.HasIndex("user_Id");
+                    b.HasIndex("userId");
 
                     b.ToTable("Addresses");
                 });
@@ -78,7 +159,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Branch", b =>
                 {
                     b.Property<string>("branch_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("addressDetail")
                         .IsRequired()
@@ -120,10 +201,25 @@ namespace DoAnLau_API.Migrations
                     b.ToTable("Branches");
                 });
 
+            modelBuilder.Entity("DoAnLau_API.Models.BranchReservationTime", b =>
+                {
+                    b.Property<string>("branch_Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("reservationTime_Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("branch_Id", "reservationTime_Id");
+
+                    b.HasIndex("reservationTime_Id");
+
+                    b.ToTable("BranchReservationTime");
+                });
+
             modelBuilder.Entity("DoAnLau_API.Models.City", b =>
                 {
                     b.Property<string>("city_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("cityName")
                         .IsRequired()
@@ -134,13 +230,29 @@ namespace DoAnLau_API.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("DoAnLau_API.Models.CustomerSize", b =>
+                {
+                    b.Property<string>("customerSize_Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("size")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
+                    b.HasKey("customerSize_Id");
+
+                    b.ToTable("CustomerSize");
+                });
+
             modelBuilder.Entity("DoAnLau_API.Models.District", b =>
                 {
                     b.Property<string>("district_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("city_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("districtName")
                         .IsRequired()
@@ -156,7 +268,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Menu", b =>
                 {
                     b.Property<string>("nenu_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("bestSaller")
                         .HasColumnType("bit");
@@ -165,7 +277,7 @@ namespace DoAnLau_API.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("menuCategory_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("nenuImage")
                         .IsRequired()
@@ -191,7 +303,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.MenuCategory", b =>
                 {
                     b.Property<string>("menuCategory_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("categoryName")
                         .IsRequired()
@@ -208,7 +320,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.News", b =>
                 {
                     b.Property<string>("news_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("PostDate")
                         .HasColumnType("datetime2");
@@ -232,7 +344,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Order", b =>
                 {
                     b.Property<string>("order_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Note")
                         .IsRequired()
@@ -247,20 +359,19 @@ namespace DoAnLau_API.Migrations
 
                     b.Property<string>("promotion_Id")
                         .IsRequired()
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("totalPrice")
                         .HasColumnType("int");
 
-                    b.Property<string>("user_Id")
-                        .IsRequired()
-                        .HasColumnType("nchar(5)");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("order_Id");
 
                     b.HasIndex("promotion_Id");
 
-                    b.HasIndex("user_Id");
+                    b.HasIndex("userId");
 
                     b.ToTable("Orders");
                 });
@@ -268,16 +379,16 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Order_Detail", b =>
                 {
                     b.Property<string>("order_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("orderDetail_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("menuTotalPrice")
                         .HasColumnType("int");
 
                     b.Property<string>("menunenu_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("price")
                         .HasColumnType("int");
@@ -298,7 +409,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Promotion", b =>
                 {
                     b.Property<string>("promotion_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PromotionImage")
                         .IsRequired()
@@ -330,10 +441,10 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.PromotionBranch", b =>
                 {
                     b.Property<string>("promotion_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("branch_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("state")
                         .HasColumnType("bit");
@@ -348,7 +459,7 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.PromotionDetail", b =>
                 {
                     b.Property<string>("promotionDetail_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("content")
                         .IsRequired()
@@ -362,10 +473,10 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.PromotionDetailPromotion", b =>
                 {
                     b.Property<string>("promotion_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("promotionDetail_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("promotion_Id", "promotionDetail_Id");
 
@@ -377,10 +488,10 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.PromotionUser", b =>
                 {
                     b.Property<string>("promotion_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("user_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("state")
                         .HasColumnType("bit");
@@ -395,16 +506,21 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.Reservation", b =>
                 {
                     b.Property<string>("reservation_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("branch_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<TimeSpan>("reservationTime")
-                        .HasColumnType("time");
+                    b.Property<string>("customerSize_Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("reservationTime_Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("state")
                         .HasColumnType("bit");
@@ -413,16 +529,36 @@ namespace DoAnLau_API.Migrations
 
                     b.HasIndex("branch_Id");
 
+                    b.HasIndex("customerSize_Id");
+
+                    b.HasIndex("reservationTime_Id");
+
                     b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("DoAnLau_API.Models.ReservationTime", b =>
+                {
+                    b.Property<string>("reservationTime_Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<TimeSpan>("Time")
+                        .HasColumnType("time");
+
+                    b.Property<bool>("state")
+                        .HasColumnType("bit");
+
+                    b.HasKey("reservationTime_Id");
+
+                    b.ToTable("ReservationTime");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.ReservationUser", b =>
                 {
                     b.Property<string>("reservation_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("user_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("state")
                         .HasColumnType("bit");
@@ -434,53 +570,13 @@ namespace DoAnLau_API.Migrations
                     b.ToTable("ReservationUsers");
                 });
 
-            modelBuilder.Entity("DoAnLau_API.Models.User", b =>
-                {
-                    b.Property<string>("user_Id")
-                        .HasColumnType("nchar(5)");
-
-                    b.Property<bool>("Gender")
-                        .HasColumnType("bit");
-
-                    b.Property<byte[]>("UserImage")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<DateTime>("birthDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType(" varchar(100)");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("phone")
-                        .IsRequired()
-                        .HasColumnType("varchar(15)");
-
-                    b.Property<int>("rewardPoints")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("role")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("state")
-                        .HasColumnType("bit");
-
-                    b.HasKey("user_Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("DoAnLau_API.Models.Ward", b =>
                 {
                     b.Property<string>("ward_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("district_Id")
-                        .HasColumnType("nchar(5)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("wardName")
                         .IsRequired()
@@ -493,15 +589,165 @@ namespace DoAnLau_API.Migrations
                     b.ToTable("Wards");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
             modelBuilder.Entity("DoAnLau_API.Models.Address", b =>
                 {
-                    b.HasOne("DoAnLau_API.Models.User", "user")
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", "user")
                         .WithMany("addresses")
-                        .HasForeignKey("user_Id")
+                        .HasForeignKey("userId");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("DoAnLau_API.Models.BranchReservationTime", b =>
+                {
+                    b.HasOne("DoAnLau_API.Models.ReservationTime", "reservationTime")
+                        .WithMany("branchReservationTimes")
+                        .HasForeignKey("branch_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("user");
+                    b.HasOne("DoAnLau_API.Models.Branch", "branch")
+                        .WithMany("branchReservationTimes")
+                        .HasForeignKey("reservationTime_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("branch");
+
+                    b.Navigation("reservationTime");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.District", b =>
@@ -530,11 +776,9 @@ namespace DoAnLau_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DoAnLau_API.Models.User", "user")
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", "user")
                         .WithMany("orders")
-                        .HasForeignKey("user_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("userId");
 
                     b.Navigation("promotion");
 
@@ -598,7 +842,7 @@ namespace DoAnLau_API.Migrations
 
             modelBuilder.Entity("DoAnLau_API.Models.PromotionUser", b =>
                 {
-                    b.HasOne("DoAnLau_API.Models.User", "user")
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", "user")
                         .WithMany("promotionUsers")
                         .HasForeignKey("promotion_Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -621,12 +865,28 @@ namespace DoAnLau_API.Migrations
                         .WithMany("reservations")
                         .HasForeignKey("branch_Id");
 
+                    b.HasOne("DoAnLau_API.Models.CustomerSize", "customerSize")
+                        .WithMany("reservations")
+                        .HasForeignKey("customerSize_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DoAnLau_API.Models.ReservationTime", "reservationTime")
+                        .WithMany("reservations")
+                        .HasForeignKey("reservationTime_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("branch");
+
+                    b.Navigation("customerSize");
+
+                    b.Navigation("reservationTime");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.ReservationUser", b =>
                 {
-                    b.HasOne("DoAnLau_API.Models.User", "user")
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", "user")
                         .WithMany("reservationUsers")
                         .HasForeignKey("reservation_Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -652,8 +912,72 @@ namespace DoAnLau_API.Migrations
                     b.Navigation("district");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("DoAnLau_API.Data.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DoAnLau_API.Data.ApplicationUser", b =>
+                {
+                    b.Navigation("addresses");
+
+                    b.Navigation("orders");
+
+                    b.Navigation("promotionUsers");
+
+                    b.Navigation("reservationUsers");
+                });
+
             modelBuilder.Entity("DoAnLau_API.Models.Branch", b =>
                 {
+                    b.Navigation("branchReservationTimes");
+
                     b.Navigation("promotionBranches");
 
                     b.Navigation("reservations");
@@ -662,6 +986,11 @@ namespace DoAnLau_API.Migrations
             modelBuilder.Entity("DoAnLau_API.Models.City", b =>
                 {
                     b.Navigation("districts");
+                });
+
+            modelBuilder.Entity("DoAnLau_API.Models.CustomerSize", b =>
+                {
+                    b.Navigation("reservations");
                 });
 
             modelBuilder.Entity("DoAnLau_API.Models.District", b =>
@@ -706,15 +1035,11 @@ namespace DoAnLau_API.Migrations
                     b.Navigation("reservationUsers");
                 });
 
-            modelBuilder.Entity("DoAnLau_API.Models.User", b =>
+            modelBuilder.Entity("DoAnLau_API.Models.ReservationTime", b =>
                 {
-                    b.Navigation("addresses");
+                    b.Navigation("branchReservationTimes");
 
-                    b.Navigation("orders");
-
-                    b.Navigation("promotionUsers");
-
-                    b.Navigation("reservationUsers");
+                    b.Navigation("reservations");
                 });
 #pragma warning restore 612, 618
         }

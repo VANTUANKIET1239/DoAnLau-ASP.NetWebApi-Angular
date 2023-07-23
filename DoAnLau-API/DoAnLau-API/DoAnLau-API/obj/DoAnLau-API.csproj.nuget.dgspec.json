@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\Code-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj": {}
+    "C:\\Users\\PC\\Desktop\\DoAn-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\Code-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj": {
+    "C:\\Users\\PC\\Desktop\\DoAn-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Code-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\DoAn-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj",
         "projectName": "DoAnLau-API",
-        "projectPath": "C:\\Users\\PC\\Desktop\\Code-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj",
+        "projectPath": "C:\\Users\\PC\\Desktop\\DoAn-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\Code-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Desktop\\DoAn-Lau\\DoAnLau-API\\DoAnLau-API\\DoAnLau-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

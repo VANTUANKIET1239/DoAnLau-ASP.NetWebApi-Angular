@@ -6,11 +6,11 @@ namespace DoAnLau_API.Models
     public class Order_Detail
     {      
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+      
         public  string orderDetail_Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+     
         public string order_Id { get; set; }
 
         /*[Column(TypeName = "nvarchar(200)")]

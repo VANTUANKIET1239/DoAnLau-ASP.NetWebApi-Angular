@@ -8,7 +8,7 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+       
         public string reservationTime_Id { get; set; }
 
         [Column(TypeName = "time")]

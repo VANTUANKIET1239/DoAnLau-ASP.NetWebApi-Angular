@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using DoAnLau_API.Data;
 
 namespace DoAnLau_API.Models
 {
@@ -7,7 +8,7 @@ namespace DoAnLau_API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column(TypeName = "nchar(5)")]
+       
         public string order_Id { get; set; }
 
  
@@ -19,7 +20,7 @@ namespace DoAnLau_API.Models
 
         [Column(TypeName = "nvarchar(50)")]
         public string paymentMethod { get; set; }
-        public User user { get; set; }
+        public ApplicationUser user { get; set; }
 
         public Promotion promotion { get; set; }
 

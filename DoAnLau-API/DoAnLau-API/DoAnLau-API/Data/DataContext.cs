@@ -1,10 +1,11 @@
 ﻿using DoAnLau_API.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 
 namespace DoAnLau_API.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<ApplicationUser>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -42,14 +43,13 @@ namespace DoAnLau_API.Data
         public DbSet<PromotionDetailPromotion> PromotionDetailPromotions { get; set; }
 
         public DbSet<News> News { get; set; }
-        public DbSet<User> Users { get; set; }
 
         public DbSet<Ward> Wards { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Order_Detail>()
             .HasOne(a => a.order)
             .WithOne(a => a.order_Detail)
