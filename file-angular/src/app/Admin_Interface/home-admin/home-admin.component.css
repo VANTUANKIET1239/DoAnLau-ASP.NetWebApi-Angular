@@ -1,0 +1,16 @@
+.category-item {
+  margin: 0 20px;
+  padding: 5px 10px;
+  border: 2px solid #db3d23;
+  background: none;
+  border-radius: 5px;
+  color: #db3d23;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .category-item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

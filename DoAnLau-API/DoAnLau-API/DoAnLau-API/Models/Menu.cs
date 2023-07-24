@@ -8,11 +8,11 @@ namespace DoAnLau_API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
      
-        public string nenu_Id { get; set; }
+        public string menu_Id { get; set; }
         [Column( TypeName = "nvarchar(200)")]
-        public string nenuName { get; set; }
+        public string menuName { get; set; }
         [Column(TypeName = "varchar(400)")]
-        public string nenuImage { get; set; }
+        public string menuImage { get; set; }
         public int price { get; set; }
         [Column(TypeName = "bit")]
         public bool hotDeal { get; set; }

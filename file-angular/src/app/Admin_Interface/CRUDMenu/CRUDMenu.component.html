@@ -1,0 +1,56 @@
+<div class="row w-100 mt-3">
+  <div class="d-flex justify-content-center">
+    <h4>
+      {{categoryName}}
+   </h4>
+  </div>
+  <div class="row w-100">
+    <div id="filter-menu">
+
+          <input type="text" class="form-control " placeholder="Tìm kiếm...">
+          <div class="select-container">
+            <select id="selectInput" class="form-control">
+              <option value="" selected disabled>Danh Mục</option>
+              <option value="option2">Nam</option>
+              <option value="option3">Nữ</option>
+            </select>
+            <span class="underline"></span>
+          </div>
+
+        <button (click)="ShowHidePopUpMenu()" class="btn btn-warning">Thêm thực đơn</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Hình ảnh</th>
+        <th scope="col">ID</th>
+        <th scope="col">Tên món ăn</th>
+        <th scope="col">Giá tiền</th>
+        <th scope="col">Hotdeal</th>
+        <th scope="col">Bestseller</th>
+        <th scope="col">Tình trạng</th>
+        <th scope="col">Tùy chọn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img class="img-fluid" src="path_to_image.jpg" alt="Hình ảnh món ăn"></td>
+        <td>1</td>
+        <td>Món ăn 1</td>
+        <td><input type="number" value="100" readonly></td>
+        <td class="align-middle-checkbox"><input  type="checkbox" disabled></td>
+        <td class="align-middle-checkbox"><input type="checkbox" disabled></td>
+        <td class="align-middle-checkbox"><input type="checkbox" disabled></td>
+        <td>
+          <button type="button" class="btn btn-danger me-2">Xóa</button>
+          <button type="button" class="btn btn-primary me-2">Sửa</button>
+          <button type="button" class="btn btn-info me-2">Chi tiết</button>
+        </td>
+      </tr>
+      <!-- Thêm các hàng dữ liệu khác ở đây -->
+    </tbody>
+  </table>
+</div>
+<app-ThemThucDonPopUp *ngIf="popupconditions" (hideshowOutput)="ShowHidePopUpMenu()"></app-ThemThucDonPopUp>

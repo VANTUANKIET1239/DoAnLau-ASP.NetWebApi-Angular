@@ -23,7 +23,7 @@ namespace DoAnLau_API.Controller
             {
                 return BadRequest(result);
             }
-            return Ok(result);
+            return Ok(new { success = true , token = result });
         }
 
         [HttpPost("SignUp")]

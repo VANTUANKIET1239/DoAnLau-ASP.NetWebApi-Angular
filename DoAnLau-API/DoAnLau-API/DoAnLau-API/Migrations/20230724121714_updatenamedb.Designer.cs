@@ -4,6 +4,7 @@ using DoAnLau_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoAnLau_API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230724121714_updatenamedb")]
+    partial class updatenamedb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -276,11 +279,11 @@ namespace DoAnLau_API.Migrations
                     b.Property<string>("menuCategory_Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("menuImage")
+                    b.Property<string>("nenuImage")
                         .IsRequired()
                         .HasColumnType("varchar(400)");
 
-                    b.Property<string>("menuName")
+                    b.Property<string>("nenuName")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)");
 

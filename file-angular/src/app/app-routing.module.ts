@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarouselSliderComponent } from './Home/TrangChu/Carousel-Slider.component';
-import { TrangThucDonComponent } from './Home/TrangThucDon/TrangThucDon.component';
-import { TrangDangNhapComponent } from './Home/TrangDangNhap/TrangDangNhap.component';
-import { DangKyComponent } from './Home/DangKy/DangKy.component';
-import { TrangUuDaiComponent } from './Home/TrangUuDai/TrangUuDai.component';
-import { TrangChiTietUuDaiComponent } from './Home/TrangChiTietUuDai/TrangChiTietUuDai.component';
-import { TrangTinTucComponent } from './Home/TinTuc/TrangTinTuc/TrangTinTuc.component';
-import { ChiTietTinTucComponent } from './Home/TinTuc/ChiTietTinTuc/ChiTietTinTuc.component';
-import { TrangGioHangComponent } from './Home/TrangGioHang/TrangGioHang.component';
-import { DatMonComponent } from './Home/DatMon/DatMon.component';
-import { GiaoDienCaNhanComponent } from './Home/GiaoDienCaNhan/GiaoDienCaNhan.component';
-import { ThongTinCaNhanComponent } from './Home/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
-import { UuDaiCuaToiComponent } from './Home/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCuaToi.component';
-import { SoDiaChiComponent } from './Home/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
-import { LichSuGiaoHangComponent } from './Home/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
-import { LichSuDatBanComponent } from './Home/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
-import { ChiTietLSDatHangComponent } from './Home/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
-import { TrangDatBanComponent } from './Home/TrangDatBan/TrangDatBan.component';
-import { ChiTietDatBanComponent } from './Home/ChiTietDatBan/ChiTietDatBan.component';
+import { CarouselSliderComponent } from './User_Interface/TrangChu/Carousel-Slider.component';
+import { TrangThucDonComponent } from './User_Interface/TrangThucDon/TrangThucDon.component';
+import { TrangDangNhapComponent } from './User_Interface/TrangDangNhap/TrangDangNhap.component';
+import { DangKyComponent } from './User_Interface/DangKy/DangKy.component';
+import { TrangUuDaiComponent } from './User_Interface/TrangUuDai/TrangUuDai.component';
+import { TrangChiTietUuDaiComponent } from './User_Interface/TrangChiTietUuDai/TrangChiTietUuDai.component';
+import { TrangTinTucComponent } from './User_Interface/TinTuc/TrangTinTuc/TrangTinTuc.component';
+import { ChiTietTinTucComponent } from './User_Interface/TinTuc/ChiTietTinTuc/ChiTietTinTuc.component';
+import { TrangGioHangComponent } from './User_Interface/TrangGioHang/TrangGioHang.component';
+import { DatMonComponent } from './User_Interface/DatMon/DatMon.component';
+import { GiaoDienCaNhanComponent } from './User_Interface/GiaoDienCaNhan/GiaoDienCaNhan.component';
+import { ThongTinCaNhanComponent } from './User_Interface/GiaoDienCaNhan/ThongTinCaNhan/ThongTinCaNhan.component';
+import { UuDaiCuaToiComponent } from './User_Interface/GiaoDienCaNhan/UuDaiCuaToi/UuDaiCuaToi.component';
+import { SoDiaChiComponent } from './User_Interface/GiaoDienCaNhan/SoDiaChi/SoDiaChi.component';
+import { LichSuGiaoHangComponent } from './User_Interface/GiaoDienCaNhan/LichSuGiaoHang/LichSuGiaoHang.component';
+import { LichSuDatBanComponent } from './User_Interface/GiaoDienCaNhan/LichSuDatBan/LichSuDatBan.component';
+import { ChiTietLSDatHangComponent } from './User_Interface/GiaoDienCaNhan/ChiTietLSDatHang/ChiTietLSDatHang.component';
+import { TrangDatBanComponent } from './User_Interface/TrangDatBan/TrangDatBan.component';
+import { ChiTietDatBanComponent } from './User_Interface/ChiTietDatBan/ChiTietDatBan.component';
+import { HomeAdminComponent } from './Admin_Interface/home-admin/home-admin.component';
+import { CRUDNewsComponent } from './Admin_Interface/CRUDNews/CRUDNews.component';
+import { CRUDMenuComponent } from './Admin_Interface/CRUDMenu/CRUDMenu.component';
+import { CRUDMenuCategoryComponent } from './Admin_Interface/CRUDMenuCategory/CRUDMenuCategory.component';
 
 
 const routes: Routes = [
@@ -31,6 +35,14 @@ const routes: Routes = [
   {path:'DatMon', component:DatMonComponent,pathMatch:'full' },
   {path:'DatBan', component:TrangDatBanComponent,pathMatch:'full' },
   {path:'ChiTietDatBan', component:ChiTietDatBanComponent,pathMatch:'full' },
+  {path:'Admin', component:HomeAdminComponent,
+  children:[
+    {path:'CRUDNews/:name', component:CRUDNewsComponent},
+    {path:'CRUDMenu/:name', component:CRUDMenuComponent},
+    {path:'CRUDMenuCategory/:name', component:CRUDMenuCategoryComponent},
+  ]
+
+  },
   {path:'User', component:GiaoDienCaNhanComponent,
     children:[
     {path:'ThongTinCaNhan', component:ThongTinCaNhanComponent },
@@ -38,7 +50,7 @@ const routes: Routes = [
     {path:'LichSuGiaoHang', component:LichSuGiaoHangComponent },
     {path:'LichSuDatBan', component:LichSuDatBanComponent },
     {path:'SoDiaChi', component:SoDiaChiComponent },
-    ] 
+    ]
   },
   {path:'UuDai', component:TrangUuDaiComponent,pathMatch:'full' },
   {path:'ChiTietGiaoHang', component:ChiTietLSDatHangComponent,pathMatch:'full' },
@@ -51,7 +63,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
    declarations: [
-    
+
   ]
 })
 export class AppRoutingModule { }
