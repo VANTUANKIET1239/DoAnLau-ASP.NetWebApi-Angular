@@ -7,11 +7,11 @@ namespace DoAnLau_API.Interface
 {
     public class MenuDTO
     {
-        public string nenu_Id { get; set; }
+        public string menu_Id { get; set; }
       
-        public string nenuName { get; set; }
+        public string menuName { get; set; }
     
-        public string nenuImage { get; set; }
+        public string menuImage { get; set; }
         public int price { get; set; }
        
         public bool hotDeal { get; set; }

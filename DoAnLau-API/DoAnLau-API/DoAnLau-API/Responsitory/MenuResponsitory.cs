@@ -22,7 +22,7 @@ namespace DoAnLau_API.Responsitory
 
         public async Task<ICollection<Menu>> GetMenus()
         {
-           var menus =  await _dataContext.Menus.Where(x => x.state).ToListAsync();
+            var menus = await _dataContext.Menus.Where(x => x.state).ToListAsync();
             return menus;
         }
 

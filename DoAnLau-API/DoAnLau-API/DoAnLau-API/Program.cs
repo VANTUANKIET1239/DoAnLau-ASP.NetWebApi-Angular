@@ -16,9 +16,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// responsitory
 builder.Services.AddScoped<IAccountResponsitory, AccountResponsitory>();
 builder.Services.AddScoped<IMenuResponsitory, MenuResponsitory>();
 builder.Services.AddScoped<IMenuCategoryResponsitory, MenuCategoryResponsitory>();
+
 
 // khởi tạo service Indentity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(

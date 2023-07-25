@@ -6,6 +6,7 @@ namespace DoAnLau_API.Interface
     {
         public Task<ICollection<Menu>> GetMenus();
 
+
         public Task<bool> IsMenuExists (string menuId);
 
         public Task<Menu> GetMenu (string menuId);
