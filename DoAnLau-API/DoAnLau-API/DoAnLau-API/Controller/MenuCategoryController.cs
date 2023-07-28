@@ -1,4 +1,5 @@
-﻿using DoAnLau_API.Interface;
+﻿using AutoMapper;
+using DoAnLau_API.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoAnLau_API.Controller
@@ -8,10 +9,12 @@ namespace DoAnLau_API.Controller
     public class MenuCategoryController : ControllerBase
     {
         private readonly IMenuCategoryResponsitory _menuCategoryResponsitory;
+        private readonly IMapper _mapper;
 
-        public MenuCategoryController(IMenuCategoryResponsitory menuCategoryResponsitory)
+        public MenuCategoryController(IMenuCategoryResponsitory menuCategoryResponsitory,IMapper mapper)
         {
             this._menuCategoryResponsitory = menuCategoryResponsitory;
+            this._mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> GetMenuCategories()
@@ -21,7 +24,7 @@ namespace DoAnLau_API.Controller
             {
                 return BadRequest();
             }
-           return Ok(result);
+           return Ok(_mapper.Map<List<MenuCategoryDTO>>(result));
         }
         [HttpGet("{menuCategoryId}")]
         public async Task<IActionResult> GetMenuCategory(string menuCategoryId)
@@ -35,7 +38,7 @@ namespace DoAnLau_API.Controller
             {
                 return BadRequest();
             }
-            return Ok(result);
+            return Ok(_mapper.Map<MenuCategoryDTO>(result));
         }
     }
 }

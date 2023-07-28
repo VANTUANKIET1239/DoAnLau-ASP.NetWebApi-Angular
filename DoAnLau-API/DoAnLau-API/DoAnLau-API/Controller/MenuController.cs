@@ -21,7 +21,7 @@ namespace DoAnLau_API.Controller
         {
             var menus = await _menuResponsitory.GetMenus();
             if (menus == null)
-            {
+            {   
                 return NotFound();
             }
             return Ok(_mapper.Map<List<MenuDTO>>(menus));
@@ -44,7 +44,7 @@ namespace DoAnLau_API.Controller
         {
             var menu = await _menuResponsitory.GetMenusByMenuCategoryId(menuCategoryId);
             if (menu == null) return BadRequest();
-            return Ok(_mapper.Map<MenuDTO>(menu));
+            return Ok(_mapper.Map<List<MenuDTO>>(menu));
 
         }
     }

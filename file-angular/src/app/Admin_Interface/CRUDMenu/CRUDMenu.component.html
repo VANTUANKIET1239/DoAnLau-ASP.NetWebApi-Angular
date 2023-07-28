@@ -7,12 +7,14 @@
   <div class="row w-100">
     <div id="filter-menu">
 
-          <input type="text" class="form-control " placeholder="Tìm kiếm...">
+          <input #searchbar type="text" (change)="SearchMenu(searchbar.value)" class="form-control " placeholder="Tìm kiếm...">
           <div class="select-container">
-            <select id="selectInput" class="form-control">
+            <select id="selectInput" [(ngModel)]="selectedcategory" (change)="selectedCate(selectedcategory)" class="form-control">
               <option value="" selected disabled>Danh Mục</option>
-              <option value="option2">Nam</option>
-              <option value="option3">Nữ</option>
+              <ng-container *ngFor="let cate of menucategories">
+                <option [value]="cate.menuCategory_Id">{{cate.categoryName}}</option>
+              </ng-container>
+              <option value="TB">Toàn bộ</option>
             </select>
             <span class="underline"></span>
           </div>
@@ -35,20 +37,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><img class="img-fluid" src="path_to_image.jpg" alt="Hình ảnh món ăn"></td>
-        <td>1</td>
-        <td>Món ăn 1</td>
-        <td><input type="number" value="100" readonly></td>
-        <td class="align-middle-checkbox"><input  type="checkbox" disabled></td>
-        <td class="align-middle-checkbox"><input type="checkbox" disabled></td>
-        <td class="align-middle-checkbox"><input type="checkbox" disabled></td>
-        <td>
-          <button type="button" class="btn btn-danger me-2">Xóa</button>
-          <button type="button" class="btn btn-primary me-2">Sửa</button>
-          <button type="button" class="btn btn-info me-2">Chi tiết</button>
-        </td>
-      </tr>
+      <ng-container *ngFor="let menu of menusview" >
+        <tr>
+          <td><img style="width: 70px;height: 70px;" class="img-fluid" src="{{menu.menuImage}}" alt="Hình ảnh món ăn"></td>
+          <td>{{menu.menu_Id}}</td>
+          <td>{{menu.menuName}}</td>
+          <td><input type="number" [value]="menu.price" readonly ></td>
+          <td class="align-middle-checkbox"><input  type="checkbox" [checked]="menu.hotDeal" disabled></td>
+          <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.bestSaller" disabled></td>
+          <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.state" disabled></td>
+          <td>
+            <button type="button" class="btn btn-danger me-2">Xóa</button>
+            <button type="button" class="btn btn-primary me-2">Sửa</button>
+            <button type="button" class="btn btn-info me-2">Chi tiết</button>
+          </td>
+        </tr>
+      </ng-container>
       <!-- Thêm các hàng dữ liệu khác ở đây -->
     </tbody>
   </table>

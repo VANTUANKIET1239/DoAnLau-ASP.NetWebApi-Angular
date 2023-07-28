@@ -52,13 +52,26 @@ builder.Services.AddAuthentication(options => {
     };
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularOrigins",
+    builder =>
+    {
+        builder.WithOrigins(
+                            "http://localhost:4200"
+                            )
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddDbContext<DataContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-var app = builder.Build();
 
+var app = builder.Build();
+app.UseCors("AllowAngularOrigins");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

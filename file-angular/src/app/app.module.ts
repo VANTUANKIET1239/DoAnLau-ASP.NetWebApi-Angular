@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './User_Interface/header/header.component';
@@ -42,6 +42,10 @@ import { CRUDMenuCategoryComponent } from './Admin_Interface/CRUDMenuCategory/CR
 import { CRUDNewsComponent } from './Admin_Interface/CRUDNews/CRUDNews.component';
 import { ThemThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/ThemThucDonPopUp/ThemThucDonPopUp.component';
 import { SuaThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/SuaThucDonPopUp/SuaThucDonPopUp.component';
+import { MenuService } from './Services/MenuService/Menu.service';
+import { MenuCategoryService } from './Services/MenuCategoryService/MenuCategory.service';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -95,9 +99,15 @@ import { SuaThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/SuaThucDonP
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    MenuService,
+    MenuCategoryService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
