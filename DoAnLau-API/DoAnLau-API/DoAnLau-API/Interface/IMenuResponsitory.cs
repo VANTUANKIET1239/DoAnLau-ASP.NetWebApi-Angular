@@ -1,4 +1,6 @@
 ﻿using DoAnLau_API.Models;
+using DoAnLau_API.Pagination;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DoAnLau_API.Interface
 {

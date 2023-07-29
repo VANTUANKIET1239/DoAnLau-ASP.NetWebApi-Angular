@@ -9,7 +9,7 @@ export class ThemThucDonPopUpComponent implements OnInit {
   public selectedImage: string  = '../../../assets/Image/default_image.jpg';
   @ViewChild("hinhanhmenu",{ static: false }) public elelinkimg!:ElementRef<HTMLInputElement>;
   @Output() public hideshowOutput = new EventEmitter();
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit() {
   }

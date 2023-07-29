@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DoAnLau_API.Interface;
+using DoAnLau_API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoAnLau_API.Controller
@@ -10,16 +11,18 @@ namespace DoAnLau_API.Controller
     {
         private readonly IMenuResponsitory _menuResponsitory;
         private readonly IMapper _mapper;
+        private readonly IPageResponsitory _pageResponsitory;
 
-        public MenuController(IMenuResponsitory menuResponsitory, IMapper mapper)
+        public MenuController(IMenuResponsitory menuResponsitory, IMapper mapper, IPageResponsitory pageResponsitory )
         {
             this._menuResponsitory = menuResponsitory;
             this._mapper = mapper;
+            this._pageResponsitory = pageResponsitory;
         }
         [HttpGet]
-        public async Task<IActionResult> GetMenus()
+        public async Task<IActionResult> GetMenus([FromQuery] int pageIndex = 1, [FromQuery] int pageSize = 4)
         {
-            var menus = await _menuResponsitory.GetMenus();
+            var menus = await _menuResponsitory.GetMenus(); 
             if (menus == null)
             {   
                 return NotFound();

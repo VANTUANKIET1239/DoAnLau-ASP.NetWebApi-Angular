@@ -45,6 +45,7 @@ import { SuaThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/SuaThucDonP
 import { MenuService } from './Services/MenuService/Menu.service';
 import { MenuCategoryService } from './Services/MenuCategoryService/MenuCategory.service';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './Admin_Interface/CRUDMenu/Pagination/Pagination.component';
 
 
 
@@ -94,7 +95,8 @@ import { FormsModule } from '@angular/forms';
     CRUDMenuCategoryComponent,
     CRUDNewsComponent,
     ThemThucDonPopUpComponent,
-    SuaThucDonPopUpComponent
+    SuaThucDonPopUpComponent,
+    PaginationComponent
 
   ],
   imports: [

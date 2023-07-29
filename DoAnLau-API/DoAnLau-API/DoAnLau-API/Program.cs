@@ -22,7 +22,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IAccountResponsitory, AccountResponsitory>();
 builder.Services.AddScoped<IMenuResponsitory, MenuResponsitory>();
 builder.Services.AddScoped<IMenuCategoryResponsitory, MenuCategoryResponsitory>();
-
+builder.Services.AddScoped<IPageResponsitory, PageResponsitory>();
 
 // khởi tạo service Indentity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(

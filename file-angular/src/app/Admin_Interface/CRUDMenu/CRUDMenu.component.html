@@ -39,7 +39,7 @@
     <tbody>
       <ng-container *ngFor="let menu of menusview" >
         <tr>
-          <td><img style="width: 70px;height: 70px;" class="img-fluid" src="{{menu.menuImage}}" alt="Hình ảnh món ăn"></td>
+          <td><img style="width: 70px;height: 70px;" class="img-fluid" [src]="menu.menuImage" alt="Hình ảnh món ăn"></td>
           <td>{{menu.menu_Id}}</td>
           <td>{{menu.menuName}}</td>
           <td><input type="number" [value]="menu.price" readonly ></td>
@@ -56,5 +56,10 @@
       <!-- Thêm các hàng dữ liệu khác ở đây -->
     </tbody>
   </table>
+  <app-Pagination [pageSize]="pageSize"
+                  [pageIndex]="pageIndex"
+                  [totalCount]="totalCount"
+                  (eventPage)="ChangePage($event)"
+  ></app-Pagination>
 </div>
 <app-ThemThucDonPopUp *ngIf="popupconditions" (hideshowOutput)="ShowHidePopUpMenu()"></app-ThemThucDonPopUp>
