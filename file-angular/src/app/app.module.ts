@@ -44,8 +44,9 @@ import { ThemThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/ThemThucDo
 import { SuaThucDonPopUpComponent } from './Admin_Interface/CRUDMenu/SuaThucDonPopUp/SuaThucDonPopUp.component';
 import { MenuService } from './Services/MenuService/Menu.service';
 import { MenuCategoryService } from './Services/MenuCategoryService/MenuCategory.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from './Admin_Interface/CRUDMenu/Pagination/Pagination.component';
+import { VNDCurrencyPipe } from './Pipes/VNDCurrency.pipe';
 
 
 
@@ -96,19 +97,20 @@ import { PaginationComponent } from './Admin_Interface/CRUDMenu/Pagination/Pagin
     CRUDNewsComponent,
     ThemThucDonPopUpComponent,
     SuaThucDonPopUpComponent,
-    PaginationComponent
+    PaginationComponent,
+    VNDCurrencyPipe
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     MenuService,
-    MenuCategoryService
-
+    MenuCategoryService,
   ],
   bootstrap: [AppComponent]
 })

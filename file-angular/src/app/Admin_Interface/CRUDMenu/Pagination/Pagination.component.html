@@ -2,17 +2,17 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
+        <button  (click)="ChangePagePreNext('PRE')" class="page-link" href="#" aria-label="Previous" [disabled]="prelock">
           <span aria-hidden="true">&laquo;</span>
-        </a>
+        </button>
       </li>
       <ng-container *ngFor="let i of totalPageView">
-        <li class="page-item"><button (click)="ChangePage(i)" class="page-link">{{i}}</button></li>
+        <li [ngClass]="{'active': i === pageIndex}" class="page-item"><button (click)="ChangePage(i)" class="page-link">{{i}}</button></li>
       </ng-container>
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
+        <button (click)="ChangePagePreNext('NEXT')" class="page-link" href="#" aria-label="Next" [disabled]="nextlock">
           <span aria-hidden="true">&raquo;</span>
-        </a>
+        </button>
       </li>
     </ul>
   </nav>

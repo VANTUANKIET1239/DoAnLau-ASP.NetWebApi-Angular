@@ -42,7 +42,7 @@
           <td><img style="width: 70px;height: 70px;" class="img-fluid" [src]="menu.menuImage" alt="Hình ảnh món ăn"></td>
           <td>{{menu.menu_Id}}</td>
           <td>{{menu.menuName}}</td>
-          <td><input type="number" [value]="menu.price" readonly ></td>
+          <td><input type="text" [value]="menu.price | VNDCurrency" readonly ></td>
           <td class="align-middle-checkbox"><input  type="checkbox" [checked]="menu.hotDeal" disabled></td>
           <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.bestSaller" disabled></td>
           <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.state" disabled></td>

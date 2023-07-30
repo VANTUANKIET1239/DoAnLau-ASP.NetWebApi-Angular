@@ -50,5 +50,20 @@ namespace DoAnLau_API.Controller
             return Ok(_mapper.Map<List<MenuDTO>>(menu));
 
         }
+        [HttpPost("AddMenu")]
+        public async Task<IActionResult> AddMenu([FromQuery]string MenuCategoryId,[FromBody]MenuDTO menu)
+        {
+            if(menu == null) return NotFound();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var menumap = _mapper.Map<Menu>(menu);
+            if(! await _menuResponsitory.AddMenu(MenuCategoryId, menumap))
+            {
+                return StatusCode(500, ModelState);
+            }
+            return Ok(new {success = true});
+        }
     }
 }

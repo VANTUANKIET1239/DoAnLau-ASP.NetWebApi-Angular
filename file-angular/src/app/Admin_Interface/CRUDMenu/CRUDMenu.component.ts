@@ -20,7 +20,6 @@ export class CRUDMenuComponent implements OnInit {
   public selectedcategory:string = '';
   public pageIndex:number = 1;
   public pageSize:number = 4;
-
   public totalCount: number = 0;
 
   constructor(private route:ActivatedRoute,

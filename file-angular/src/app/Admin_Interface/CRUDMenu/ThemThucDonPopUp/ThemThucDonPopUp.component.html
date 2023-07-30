@@ -8,18 +8,11 @@
         <button (click)="HideorShowPopup()" id="x-click"><i class='bx bx-x bx-lg' undefined></i></button>
       </div>
     </div>
-    <form action="">
-      <div class="form-outline mb-3">
-        <label for="textInput">ID thực đơn</label>
-        <div class="input-container">
-          <input type="text" id="textInput" class="form-control" readonly />
-          <span class="underline"></span>
-        </div>
-      </div>
+    <form (ngSubmit)="AddNewMenu()" [formGroup]="dataform">
       <div class="form-outline mb-3">
         <label for="textInput">Tên món ăn</label>
         <div class="input-container">
-          <input type="text" id="textInput" class="form-control" />
+          <input type="text" id="textInput" formControlName = "menuName" class="form-control" />
           <span class="underline"></span>
         </div>
       </div>
@@ -27,7 +20,7 @@
       <div class="form-outline mb-3 d-flex">
 
         <div class="input-container w-75 me-3">
-          <input #hinhanhmenu type="text" id="textInput" class="form-control" />
+          <input #hinhanhmenu type="text" id="textInput" formControlName = "menuImage" class="form-control" />
           <span class="underline"></span>
         </div>
         <button type="button" (click)="onLinkSelected()" class="btn w-25" style="background-color: #db3d23;color: white;font-weight: bold;">Tải lên</button>
@@ -38,31 +31,32 @@
       <div class="form-outline mb-3">
         <label for="textInput">Gía tiền</label>
         <div class="input-container">
-          <input type="number" id="textInput" class="form-control" />
+          <input type="number" id="textInput" formControlName = "menuPrice" class="form-control" />
           <span class="underline"></span>
         </div>
       </div>
       <div class="row mb-3">
         <div class="col-12 col-md-6">
           <label for="bestsaller-checkbox">
-            <input name="bestsaller-checkbox" type="checkbox">
+            <input name="bestsaller-checkbox" formControlName = "hotDeal" type="checkbox">
             HOT DEAL
           </label>
         </div>
         <div class="col-12 col-md-6">
           <label for="bestsaller-checkbox">
-            <input name="bestsaller-checkbox" type="checkbox">
+            <input name="bestsaller-checkbox"   formControlName = "bestSaller" type="checkbox">
             Bestseller
           </label>
         </div>
       </div>
       <div class="form-outline mb-4">
-        <label for="selectInput">Tỉnh/Thành phố</label>
+        <label for="selectInput">Danh mục thực đơn</label>
         <div class="select-container">
-          <select id="selectInput" class="form-control">
+          <select id="selectInput" formControlName = "menuCategory" class="form-control">
             <option value="" selected disabled>Vui lòng chọn</option>
-            <option value="option2">Nam</option>
-            <option value="option3">Nữ</option>
+            <ng-container *ngFor="let itemsCate of catelist">
+              <option [value]="itemsCate.menuCategory_Id">{{itemsCate.categoryName}}</option>
+            </ng-container>
           </select>
           <span class="underline"></span>
         </div>
@@ -70,7 +64,7 @@
 
       <div class="d-flex flex-row justify-content-end">
         <button (click)="HideorShowPopup()" class="btn btn-outline-secondary me-2" style="font-weight: bold;" id="btnhuy">Hủy</button>
-        <button class="btn" id="btnxacnhan">Thêm địa chỉ</button>
+        <button type="submit" class="btn" id="btnxacnhan">Thêm địa chỉ</button>
       </div>
     </form>
   </div>

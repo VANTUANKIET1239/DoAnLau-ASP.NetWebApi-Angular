@@ -13,6 +13,22 @@ namespace DoAnLau_API.Responsitory
         {
             this._dataContext = dataContext;
         }
+
+        public async Task<bool> AddMenu(string menuCategoryId,Menu menu)
+        {
+            var newMenuId = _dataContext.Menus.Count();
+            var menucategory = _dataContext.MenuCategories.Where(x => x.state && x.menuCategory_Id == menuCategoryId).FirstOrDefault();
+            menu.menuCategory = menucategory;
+            menu.menu_Id = "ME" + (newMenuId + 1).ToString("0000");
+           _dataContext.Add(menu);
+           return await _dataContext.SaveChangesAsync() > 0 ? true: false;
+        }
+
+        public Task<int> GetAllMenusCount()
+        {
+            return _dataContext.Menus.CountAsync();
+        }
+
         public async Task<Menu> GetMenu(string menuId)
         {
             var menu = await _dataContext.Menus.Where(x => x.menu_Id == menuId).FirstOrDefaultAsync();
@@ -37,5 +53,6 @@ namespace DoAnLau_API.Responsitory
             bool menu  = await _dataContext.Menus.AnyAsync(x => x.menu_Id == menuId && x.state);
             return menu;
         }
+
     }
 }

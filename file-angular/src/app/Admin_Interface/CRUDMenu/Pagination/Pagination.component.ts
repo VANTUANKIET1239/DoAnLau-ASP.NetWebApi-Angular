@@ -13,12 +13,11 @@ export class PaginationComponent implements OnInit,OnChanges {
   @Output() public eventPage = new EventEmitter();
   public totalPage:number = 0;
   public totalPageView: number[] = [];
+  public prelock: boolean = true;
+  public nextlock: boolean = false;
   constructor() {
    }
   ngOnChanges(changes: SimpleChanges): void {
-        console.log(this.pageIndex);
-        console.log(this.pageSize);
-        console.log(this.totalCount);
         this.totalPage = Math.ceil(this.totalCount/this.pageSize);
        this.PageSize();
   }
@@ -30,8 +29,33 @@ export class PaginationComponent implements OnInit,OnChanges {
     this.totalPageView = totalpage;
   }
   public ChangePage(event:number):void{
+    this.pageIndex = event;
+    this.CheckPage();
     this.eventPage.emit(event);
-    console.log("pagination event " + event);
+  }
+  private CheckPage():void{
+      if(this.pageIndex == 1){
+          this.prelock = true;
+      }
+      else if(this.pageIndex == this.totalPage){
+          this.nextlock = true;
+      }
+      else{
+        this.prelock = false;
+        this.nextlock = false;
+      }
+  }
+  public ChangePagePreNext(condition: string){
+      if(condition === "PRE"){
+        this.pageIndex -= 1;
+        this.CheckPage();
+        this.eventPage.emit(this.pageIndex);
+      }
+      else{
+        this.pageIndex += 1;
+        this.CheckPage();
+        this.eventPage.emit(this.pageIndex);
+      }
   }
   ngOnInit() {
 
