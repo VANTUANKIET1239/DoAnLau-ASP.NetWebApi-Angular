@@ -24,6 +24,14 @@ namespace DoAnLau_API.Responsitory
            return await _dataContext.SaveChangesAsync() > 0 ? true: false;
         }
 
+        public async Task<bool> EditMenu(string menuCategoryId, Menu menu)
+        {
+            var menucategory = _dataContext.MenuCategories.Where(x => x.state && x.menuCategory_Id == menuCategoryId).FirstOrDefault();
+            menu.menuCategory = menucategory;
+            _dataContext.Update(menu);
+            return await _dataContext.SaveChangesAsync() > 0 ? true : false;
+        }
+
         public Task<int> GetAllMenusCount()
         {
             return _dataContext.Menus.CountAsync();

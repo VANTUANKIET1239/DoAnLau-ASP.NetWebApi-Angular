@@ -17,6 +17,9 @@ namespace DoAnLau_API.Interface
 
         public Task<int> GetAllMenusCount();
 
-        public Task<bool> AddMenu(string menuCategoryId,Menu menu);
+        public Task<bool> AddMenu(string menuCategoryId, Menu menu);
+
+        public Task<bool> EditMenu(string menuCategoryId, Menu menu);
+
     }
 }

@@ -18,13 +18,17 @@ constructor(private httpclient: HttpClient) { }
   public GetMenus(): Observable<Menu[]>{
     const url = `${this.REST_API_SERVER}`;
     return this.httpclient.get<Menu[]>(url,this.httpOptions);
-  }
+  };
   public AddNewMenu(cateId: string, menu:Menu): Observable<any>{
     const url = `${this.REST_API_SERVER}/AddMenu?MenuCategoryId=${cateId}`;
+    return this.httpclient.post<Menu>(url,menu,this.httpOptions);
+  };
+  public EditMenu(cateId: string, menu:Menu): Observable<any>{
+    const url = `${this.REST_API_SERVER}/EditMenu?MenuCategoryId=${cateId}`;
     return this.httpclient.post<Menu>(url,menu,this.httpOptions);
   }
   public GetMenusByCate(cateid:string): Observable<Menu[]>{
     const url = `${this.REST_API_SERVER}/MenuCategory/${cateid}`;
     return this.httpclient.get<Menu[]>(url,this.httpOptions);
-  }
+  };
 }

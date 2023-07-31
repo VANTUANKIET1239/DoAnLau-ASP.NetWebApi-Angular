@@ -65,5 +65,20 @@ namespace DoAnLau_API.Controller
             }
             return Ok(new {success = true});
         }
+        [HttpPost("EditMenu")]
+        public async Task<IActionResult> EditMenu([FromQuery] string MenuCategoryId, [FromBody] MenuDTO menu)
+        {
+            if (menu == null) return NotFound();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var menumap = _mapper.Map<Menu>(menu);
+            if (!await _menuResponsitory.EditMenu(MenuCategoryId, menumap))
+            {
+                return StatusCode(500, ModelState);
+            }
+            return Ok(new { success = true });
+        }
     }
 }
