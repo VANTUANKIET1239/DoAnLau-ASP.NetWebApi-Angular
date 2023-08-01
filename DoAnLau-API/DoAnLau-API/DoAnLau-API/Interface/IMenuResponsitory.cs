@@ -21,5 +21,7 @@ namespace DoAnLau_API.Interface
 
         public Task<bool> EditMenu(string menuCategoryId, Menu menu);
 
+        public Task<bool> RemoveMenu(string menuId);
+
     }
 }

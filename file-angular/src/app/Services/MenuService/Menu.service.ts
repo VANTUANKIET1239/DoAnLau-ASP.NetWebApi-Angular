@@ -13,6 +13,15 @@ export class MenuService {
       'Content-Type':'application/json',
     }),
   }
+  // private httpOptions2 = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'text/plain',
+  //   }),
+  // }
+  private headers = new HttpHeaders({
+    'Content-Type': 'text/plain',
+  });
+
 constructor(private httpclient: HttpClient) { }
 
   public GetMenus(): Observable<Menu[]>{
@@ -30,5 +39,12 @@ constructor(private httpclient: HttpClient) { }
   public GetMenusByCate(cateid:string): Observable<Menu[]>{
     const url = `${this.REST_API_SERVER}/MenuCategory/${cateid}`;
     return this.httpclient.get<Menu[]>(url,this.httpOptions);
+  };
+  public RemoveMenu(menu:Menu): Observable<any>{
+    const url = `${this.REST_API_SERVER}/RemoveMenu`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'text/json',
+    });
+    return this.httpclient.post<Menu>(url,menu,{headers: headers});
   };
 }

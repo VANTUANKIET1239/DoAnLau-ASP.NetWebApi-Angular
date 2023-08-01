@@ -47,6 +47,7 @@ import { MenuCategoryService } from './Services/MenuCategoryService/MenuCategory
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from './Admin_Interface/CRUDMenu/Pagination/Pagination.component';
 import { VNDCurrencyPipe } from './Pipes/VNDCurrency.pipe';
+import { XacNhanXoaPopUpComponent } from './Admin_Interface/CRUDMenu/XacNhanXoaPopUp/XacNhanXoaPopUp.component';
 
 
 
@@ -98,7 +99,8 @@ import { VNDCurrencyPipe } from './Pipes/VNDCurrency.pipe';
     ThemThucDonPopUpComponent,
     SuaThucDonPopUpComponent,
     PaginationComponent,
-    VNDCurrencyPipe
+    VNDCurrencyPipe,
+    XacNhanXoaPopUpComponent
 
   ],
   imports: [

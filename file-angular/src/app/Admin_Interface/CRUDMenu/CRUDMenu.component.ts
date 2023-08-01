@@ -22,12 +22,14 @@ export class CRUDMenuComponent implements OnInit {
   public pageSize:number = 4;
   public totalCount: number = 0;
   public menuEdit:Menu = new Menu('','','',0,true,true,true);
-
+  public removeItemData: Menu  = new Menu('','','',0,true,true,true);
   constructor(private route:ActivatedRoute,
               private menuService: MenuService,
               private menucategoryservice: MenuCategoryService) { }
+
   public popupconditions:boolean = false;
   public editpopupconditions:boolean = false;
+  public removeConfirmPopupCondition: boolean = false;
   ngOnInit() {
     this.categoryName = <string> this.route.snapshot.paramMap.get("name");
     this.menuService.GetMenus().subscribe((data) =>{
@@ -66,11 +68,20 @@ export class CRUDMenuComponent implements OnInit {
   }
   public ShowHidePopUpMenuEdit(Menu:Menu){
     this.menuEdit = Menu;
-    console.log("menu "+this.menuEdit.menuName);
     this.editpopupconditions = !this.editpopupconditions;
   }
   public HidePopUpMenuEdit(){
+
     this.editpopupconditions = !this.editpopupconditions;
+  }
+  public HidePopUpMenuRemoveConfirm(){
+
+    this.removeConfirmPopupCondition = !this.removeConfirmPopupCondition;
+  }
+
+  public ShowHideRemoveConfirm(removeMenu:Menu){
+        this.removeItemData =  removeMenu;
+        this.removeConfirmPopupCondition = !this.removeConfirmPopupCondition;
   }
 
   public selectedCate(selectedcategoryid:string){

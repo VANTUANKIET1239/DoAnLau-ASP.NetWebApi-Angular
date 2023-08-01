@@ -12,7 +12,7 @@ import { MenuService } from 'src/app/Services/MenuService/Menu.service';
   styleUrls: ['./SuaThucDonPopUp.component.css']
 })
 export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
-  public selectedImage: string  = '../../../assets/Image/default_image.jpg';
+  public selectedImage: string  = '';
   @ViewChild("hinhanhmenu",{ static: false }) public elelinkimg!:ElementRef<HTMLInputElement>;
   @Output() public hideshowOutputEdit = new EventEmitter();
   public dataform: FormGroup = this.formbuilder.group({
@@ -37,7 +37,7 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
 
   }
   ngAfterViewInit(): void {
-
+    this.selectedImage = this.menuEdit.menuImage;
   }
 
   ngOnInit() {
@@ -52,11 +52,7 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
   }
 
   public CreateNewForm(){
-
-    console.log(this.catelist);
-    console.log(this.menuEdit.menu_Id);
       let currentCategory: MenuCategory[] = this.catelist.filter(x => x.menuCategory_Id == this.menuEdit.menu_Id);
-      console.log(currentCategory);
       this.dataform = this.formbuilder.group({
         menuId:[this.menuEdit.menu_Id],
         menuName: [this.menuEdit.menuName, [Validators.required]],
@@ -67,6 +63,7 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
         menuCategory: [''],
         state:[this.menuEdit.state],
       });
+
   }
   public EditNewMenu(){
     //  console.log(this.dataform.value);
@@ -84,8 +81,8 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
       this.menuService.EditMenu(newmenuform.menuCategory,newMenu).subscribe((data) =>{
           let check = data.success;
           if(check){
-            alert("Chỉnh sửa thực đơn thành công!");
             this.hideshowOutputEdit.emit();
+            alert("Chỉnh sửa thực đơn thành công!");
           }
       });
 

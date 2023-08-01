@@ -47,9 +47,8 @@
           <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.bestSaller" disabled></td>
           <td class="align-middle-checkbox"><input type="checkbox" [checked]="menu.state" disabled></td>
           <td>
-            <button type="button" class="btn btn-danger me-2">Xóa</button>
+            <button (click)="ShowHideRemoveConfirm(menu)" type="button" class="btn btn-danger me-2">Xóa</button>
             <button (click)="ShowHidePopUpMenuEdit(menu)" type="button" class="btn btn-primary me-2">Sửa</button>
-            <button type="button" class="btn btn-info me-2">Chi tiết</button>
           </td>
         </tr>
       </ng-container>
@@ -64,3 +63,4 @@
 </div>
 <app-SuaThucDonPopUp  *ngIf="editpopupconditions" [menuEdit]="menuEdit"  (hideshowOutputEdit)="HidePopUpMenuEdit()"></app-SuaThucDonPopUp>
 <app-ThemThucDonPopUp *ngIf="popupconditions"  (hideshowOutput)="ShowHidePopUpMenu()"></app-ThemThucDonPopUp>
+<app-XacNhanXoaPopUp [removeItemData]="removeItemData" *ngIf="removeConfirmPopupCondition"  (hideshowOutputRemoveConfirm)="HidePopUpMenuRemoveConfirm()"></app-XacNhanXoaPopUp>

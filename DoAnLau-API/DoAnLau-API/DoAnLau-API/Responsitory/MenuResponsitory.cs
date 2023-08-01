@@ -1,6 +1,8 @@
 ﻿using DoAnLau_API.Data;
+using DoAnLau_API.FF;
 using DoAnLau_API.Interface;
 using DoAnLau_API.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoAnLau_API.Responsitory
@@ -62,5 +64,12 @@ namespace DoAnLau_API.Responsitory
             return menu;
         }
 
+        public async Task<bool> RemoveMenu(string menuId)
+        {
+            var menuRemove = await _dataContext.Menus.Where(x => x.state && x.menu_Id == menuId).FirstOrDefaultAsync();
+            menuRemove.state = false;
+            _dataContext.Update(menuRemove);
+            return await _dataContext.SaveChangesAsync() > 0 ? true : false;
+        }
     }
 }

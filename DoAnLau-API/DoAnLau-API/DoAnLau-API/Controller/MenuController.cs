@@ -80,5 +80,15 @@ namespace DoAnLau_API.Controller
             }
             return Ok(new { success = true });
         }
+        [HttpPost("RemoveMenu")]
+        public async Task<IActionResult> RemoveMenu([FromBody] MenuDTO menu)
+        {
+            if (menu == null) return NotFound();
+            if (!await _menuResponsitory.RemoveMenu(menu.menu_Id))
+            {
+                return StatusCode(500, ModelState);
+            }
+            return Ok(new { success = true });
+        }
     }
 }
