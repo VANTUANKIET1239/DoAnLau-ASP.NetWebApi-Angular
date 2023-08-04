@@ -61,13 +61,13 @@ padding: 0;
   accent-color: black;
 }
 .larger-checkbox {
-  font-size: 16px;
-  padding-left: 20px;
+  font-size: 16px; /* Tăng kích thước chữ */
+  padding-left: 20px; /* Khoảng cách giữa checkbox và chữ */
 }
 
 .larger-checkbox input[type="checkbox"] {
-  transform: scale(1.5);
-  margin-right: 10px;
+  transform: scale(1.5); /* Tăng kích thước checkbox */
+  margin-right: 10px; /* Khoảng cách giữa checkbox và chữ */
 }
 #btnxacnhan{
   background-color: #db3d23;

@@ -55,12 +55,25 @@
       <!-- Thêm các hàng dữ liệu khác ở đây -->
     </tbody>
   </table>
-  <app-Pagination [pageSize]="pageSize"
+  <app-Pagination
                   [pageIndex]="pageIndex"
-                  [totalCount]="totalCount"
+                  [totalPage]="totalPage"
                   (eventPage)="ChangePage($event)"
   ></app-Pagination>
 </div>
-<app-SuaThucDonPopUp  *ngIf="editpopupconditions" [menuEdit]="menuEdit"  (hideshowOutputEdit)="HidePopUpMenuEdit()"></app-SuaThucDonPopUp>
-<app-ThemThucDonPopUp *ngIf="popupconditions"  (hideshowOutput)="ShowHidePopUpMenu()"></app-ThemThucDonPopUp>
-<app-XacNhanXoaPopUp [removeItemData]="removeItemData" *ngIf="removeConfirmPopupCondition"  (hideshowOutputRemoveConfirm)="HidePopUpMenuRemoveConfirm()"></app-XacNhanXoaPopUp>
+<app-SuaThucDonPopUp
+                    *ngIf="editpopupconditions"
+                    [menuEdit]="menuEdit"
+                    (hideshowOutputEdit)="HidePopUpMenuEdit()">
+</app-SuaThucDonPopUp>
+
+<app-ThemThucDonPopUp
+                    *ngIf="popupconditions"
+                    (hideshowOutput)="ShowHidePopUpMenu()">
+</app-ThemThucDonPopUp>
+
+<app-XacNhanXoaPopUp
+                    [removeItemData]="removeItemData"
+                    *ngIf="removeConfirmPopupCondition"
+                    (hideshowOutputRemoveConfirm)="HidePopUpMenuRemoveConfirm()">
+</app-XacNhanXoaPopUp>

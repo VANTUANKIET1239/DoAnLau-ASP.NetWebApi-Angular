@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, Output, EventEmitter, Input, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Output, EventEmitter, Input, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Menu } from 'src/app/Models/Menu';
 import { MenuCategory } from 'src/app/Models/MenuCategory';
@@ -11,8 +11,8 @@ import { MenuService } from 'src/app/Services/MenuService/Menu.service';
   templateUrl: './SuaThucDonPopUp.component.html',
   styleUrls: ['./SuaThucDonPopUp.component.css']
 })
-export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
-  public selectedImage: string  = '';
+export class SuaThucDonPopUpComponent implements OnInit, AfterViewChecked {
+  public selectedImage: string  = '../../../assets/Image/default_image.jpg';
   @ViewChild("hinhanhmenu",{ static: false }) public elelinkimg!:ElementRef<HTMLInputElement>;
   @Output() public hideshowOutputEdit = new EventEmitter();
   public dataform: FormGroup = this.formbuilder.group({
@@ -36,12 +36,12 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
     });
 
   }
-  ngAfterViewInit(): void {
-    this.selectedImage = this.menuEdit.menuImage;
+  ngAfterViewChecked(): void {
+
   }
 
   ngOnInit() {
-
+    this.selectedImage = this.menuEdit.menuImage;
   }
   onLinkSelected() {
       this.selectedImage = this.elelinkimg.nativeElement.value;
@@ -53,6 +53,7 @@ export class SuaThucDonPopUpComponent implements OnInit, AfterViewInit {
 
   public CreateNewForm(){
       let currentCategory: MenuCategory[] = this.catelist.filter(x => x.menuCategory_Id == this.menuEdit.menu_Id);
+      console.log(this.menuEdit);
       this.dataform = this.formbuilder.group({
         menuId:[this.menuEdit.menu_Id],
         menuName: [this.menuEdit.menuName, [Validators.required]],

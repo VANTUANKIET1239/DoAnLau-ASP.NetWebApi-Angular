@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DoAnLau_API.Interface;
+using DoAnLau_API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoAnLau_API.Controller
@@ -39,6 +40,60 @@ namespace DoAnLau_API.Controller
                 return BadRequest();
             }
             return Ok(_mapper.Map<MenuCategoryDTO>(result));
+        }
+        [HttpPost("AddMenuCategory")]
+        public async Task<IActionResult> AddMenuCategory(MenuCategoryDTO menuCategory)
+        {
+            if(menuCategory == null)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var menuCategoryMap = _mapper.Map<MenuCategory>(menuCategory);
+            if(!await _menuCategoryResponsitory.CreateMenuCategory(menuCategoryMap))
+            {
+                return StatusCode(500,ModelState);
+            }
+            return Ok(new {success = true});
+        }
+        [HttpPost("EditMenuCategory")]
+        public async Task<IActionResult> EditMenuCategory(MenuCategoryDTO menuCategory)
+        {
+            if (menuCategory == null)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var menuCategoryMap = _mapper.Map<MenuCategory>(menuCategory);
+            if (!await _menuCategoryResponsitory.UpdateMenuCategory(menuCategoryMap))
+            {
+                return StatusCode(500, ModelState);
+            }
+            return Ok(new { success = true });
+        }
+        [HttpPost("RemoveMenuCategory")]
+        public async Task<IActionResult> RemoveMenuCategory(MenuCategoryDTO menuCategory)
+        {
+            if (menuCategory.menuCategory_Id == null || menuCategory == null)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var menuCategoryMap = _mapper.Map<MenuCategory>(menuCategory);
+            if (!await _menuCategoryResponsitory.RemoveMenuCategory(menuCategoryMap))
+            {
+                return StatusCode(500, ModelState);
+            }
+            return Ok(new { success = true });
         }
     }
 }

@@ -10,10 +10,10 @@ namespace DoAnLau_API.Interface
 
         public Task<bool> IsMenuCategoryExists(string MenuCategoryId);
 
-       /* public Task<bool> CreateMenuCategory(MenuCategoryDTO menuCategory);
+        public Task<bool> CreateMenuCategory(MenuCategory menuCategory);
 
-        public Task<bool> UpdateMenuCategory(MenuCategoryDTO menuCategory);
+        public Task<bool> UpdateMenuCategory(MenuCategory menuCategory);
 
-        public Task<bool> RemoveMenuCategory(string MenuCategoryId);*/
+        public Task<bool> RemoveMenuCategory(MenuCategory menuCategory);
     }
 }

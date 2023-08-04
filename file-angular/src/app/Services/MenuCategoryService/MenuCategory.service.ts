@@ -19,6 +19,18 @@ public GetMenuCategories():Observable<MenuCategory[]>{
    const url = `${this.REST_API_SERVER}`;
    return this.httpclient.get<MenuCategory[]>(url,this.httpOptions);
 }
+public AddNewMenuCategory(menuCategory:MenuCategory): Observable<any>{
+  const url = `${this.REST_API_SERVER}/AddMenuCategory`;
+  return this.httpclient.post<MenuCategory>(url,menuCategory,this.httpOptions);
+};
+public EditMenuCategory(menuCategory:MenuCategory): Observable<any>{
+  const url = `${this.REST_API_SERVER}/EditMenuCategory`;
+  return this.httpclient.post<MenuCategory>(url,menuCategory,this.httpOptions);
+}
+public RemoveMenuCategory(menuCategory:MenuCategory): Observable<any>{
+  const url = `${this.REST_API_SERVER}/RemoveMenuCategory`;
+  return this.httpclient.post<MenuCategory>(url,menuCategory,this.httpOptions);
+};
 
 
 

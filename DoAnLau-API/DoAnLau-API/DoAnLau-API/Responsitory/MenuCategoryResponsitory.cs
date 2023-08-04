@@ -13,6 +13,16 @@ namespace DoAnLau_API.Responsitory
         {
             this._dataContext = dataContext;
         }
+
+        public async Task<bool> CreateMenuCategory(MenuCategory menuCategory)
+        {
+            var getMenuCategoriesCount = _dataContext.MenuCategories.Count();
+            string newMenuCategoryId = "CG" + (getMenuCategoriesCount + 1).ToString("0000");
+            menuCategory.menuCategory_Id = newMenuCategoryId;
+            _dataContext.MenuCategories.Add(menuCategory);
+            return await _dataContext.SaveChangesAsync() > 0 ? true : false;
+        }
+
         public async Task<ICollection<MenuCategory>> GetMenuCategories()
         {
             return await _dataContext.MenuCategories.Where(x => x.state).ToListAsync();
@@ -26,6 +36,19 @@ namespace DoAnLau_API.Responsitory
         public async Task<bool> IsMenuCategoryExists(string MenuCategoryId)
         {
             return await _dataContext.MenuCategories.AnyAsync(x => x.menuCategory_Id == MenuCategoryId && x.state);
+        }
+
+        public async Task<bool> RemoveMenuCategory(MenuCategory menuCategory)
+        {
+            menuCategory.state = false;
+            _dataContext.Update(menuCategory);
+            return await _dataContext.SaveChangesAsync() > 0 ? true : false;
+        }
+
+        public async Task<bool> UpdateMenuCategory(MenuCategory menuCategory)
+        {
+            _dataContext.Update(menuCategory);
+            return await _dataContext.SaveChangesAsync() > 0 ? true :false;
         }
     }
 }

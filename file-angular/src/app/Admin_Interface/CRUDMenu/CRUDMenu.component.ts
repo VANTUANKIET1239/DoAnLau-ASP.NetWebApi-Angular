@@ -21,6 +21,7 @@ export class CRUDMenuComponent implements OnInit {
   public pageIndex:number = 1;
   public pageSize:number = 4;
   public totalCount: number = 0;
+  public totalPage: number = 0;
   public menuEdit:Menu = new Menu('','','',0,true,true,true);
   public removeItemData: Menu  = new Menu('','','',0,true,true,true);
   constructor(private route:ActivatedRoute,
@@ -56,6 +57,7 @@ export class CRUDMenuComponent implements OnInit {
      }
      this.totalCount = this.menusPage.length;
       this.menusview = newitem;
+      this.totalPage = Math.ceil(this.totalCount/this.pageSize) == 0 ? 1 : Math.ceil(this.totalCount/this.pageSize);
 
   }
   public ChangePage(event:any):void{

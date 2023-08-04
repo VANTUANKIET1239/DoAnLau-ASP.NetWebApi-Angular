@@ -1,8 +1,53 @@
-<p>
-  {{categoryName}}
-</p>
-<div class="row w-100">
- <div class="d-flex flex-row justify-content-end">
-     <button class="btn btn-warning">Thêm thực đơn</button>
- </div>
+<div class="row w-100 mt-3">
+  <div class="d-flex justify-content-center">
+    <h4>
+      {{categoryName}}
+    </h4>
+  </div>
+  <div class="row w-100">
+    <div id="filter-menu">
+
+      <input #searchbar type="text" (change)="SearchMenu(searchbar.value)" class="form-control "
+        placeholder="Tìm kiếm...">
+
+
+      <button (click)="ShowHidePopUpMenu()" class="btn btn-warning">Thêm danh mục thực đơn</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tên danh mục</th>
+        <th scope="col">Tình trạng</th>
+        <th scope="col">Tùy chọn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let menuCategory of menuCategoriesview">
+        <tr>
+          <td>{{menuCategory.menuCategory_Id}}</td>
+          <td>{{menuCategory.categoryName}}</td>
+          <td class="align-middle-checkbox"><input type="checkbox" [checked]="menuCategory.state" disabled></td>
+          <td>
+            <button (click)="ShowHideRemoveConfirm(menuCategory)" type="button" class="btn btn-danger me-2">Xóa</button>
+            <button (click)="ShowHidePopUpMenuEdit(menuCategory)" type="button" class="btn btn-primary me-2">Sửa</button>
+          </td>
+        </tr>
+      </ng-container>
+      <!-- Thêm các hàng dữ liệu khác ở đây -->
+    </tbody>
+  </table>
+  <app-Pagination  [pageIndex]="pageIndex" [totalPage]="totalPage"
+    (eventPage)="ChangePage($event)"></app-Pagination>
 </div>
+<app-SuaDanhMucThucDon *ngIf="editpopupconditions" [menuCategoryEdit]="menuCategoryEdit" (hideshowOutputEdit)="HidePopUpMenuEdit()">
+</app-SuaDanhMucThucDon>
+
+<app-ThemDanhMucThucDon *ngIf="popupconditions" (hideshowOutput)="ShowHidePopUpMenu()">
+</app-ThemDanhMucThucDon>
+
+<app-XacNhanXoaDMTD [removeItemData]="removeItemData" *ngIf="removeConfirmPopupCondition"
+  (hideshowOutputRemoveConfirm)="HidePopUpMenuRemoveConfirm()">
+</app-XacNhanXoaDMTD>

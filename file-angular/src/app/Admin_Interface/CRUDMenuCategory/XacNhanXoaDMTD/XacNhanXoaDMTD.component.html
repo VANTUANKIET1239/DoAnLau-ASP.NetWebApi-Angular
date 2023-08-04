@@ -1,0 +1,19 @@
+<div id="bg-modal">
+  <div id="bg-content" class="p-4">
+    <div class="row">
+      <div class="col-11 d-flex align-items-center">
+        <h3 style="margin: 0;">Xác nhận xóa</h3>
+      </div>
+      <div class="col-1">
+        <button (click)="HideorShowPopup()" id="x-click"><i class='bx bx-x bx-lg' undefined></i></button>
+      </div>
+    </div>
+    <div class="mt-3">
+        <p>Bạn có muốn xóa thực đơn <strong>{{removeItemData.categoryName}}; ID = {{removeItemData.menuCategory_Id}}</strong> không ?</p>
+    </div>
+    <div class="d-flex flex-row justify-content-end">
+      <button (click)="HideorShowPopup()" class="btn btn-outline-secondary me-2" style="font-weight: bold;" id="btnhuy">Hủy</button>
+      <button (click)="RemoveMenu()" type="button" class="btn" id="btnxacnhan">Xác nhận</button>
+    </div>
+  </div>
+</div>
