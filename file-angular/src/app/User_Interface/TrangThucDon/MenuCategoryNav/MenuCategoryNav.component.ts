@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MenuCategory } from 'src/app/Models/MenuCategory';
 
 @Component({
   selector: 'app-MenuCategoryNav',
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class MenuCategoryNavComponent implements OnInit {
 
   constructor() { }
-
+  @Input() public listMenuCateItems: MenuCategory[] = [];
+  @Output() public onClick = new EventEmitter();
   ngOnInit() {
+  }
+
+  public onClickMenuItems(menuCateId: string){
+      this.onClick.emit(menuCateId);
   }
 
 }

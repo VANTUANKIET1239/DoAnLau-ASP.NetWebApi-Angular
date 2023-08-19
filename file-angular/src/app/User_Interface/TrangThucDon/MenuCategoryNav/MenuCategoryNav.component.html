@@ -4,21 +4,17 @@
   </div>
   <div class="card-body">
     <ul class="ul-item">
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Các món ăn kèm</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Các loại thịt lẩu</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"    routerLink="/ThucDon">Khai vị</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Khăn Lạnh</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Nội tạng</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Các món ăn kèm</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Các loại thịt lẩu</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Khai vị</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Khăn Lạnh</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate" routerLink="/ThucDon">Nội tạng</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Các món ăn kèm</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Các loại thịt lẩu</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Khai vị</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"   routerLink="/ThucDon">Khăn Lạnh</a></li>
-      <li class= "item-cate"><a appDoiMauChu = 'a-cate' class="a-cate"  routerLink="/ThucDon">Nội tạng</a></li>
+        <ng-container *ngFor="let item of listMenuCateItems">
+          <li class= "item-cate">
+              <a
+                  appDoiMauChu = 'a-cate' class="a-cate"
+                  routerLink="/ThucDon"
+                  (click)="onClickMenuItems(item.menuCategory_Id)"
+                  >
+                  {{item.categoryName}}
+              </a>
+          </li>
+        </ng-container>
     </ul>
   </div>
 </div>

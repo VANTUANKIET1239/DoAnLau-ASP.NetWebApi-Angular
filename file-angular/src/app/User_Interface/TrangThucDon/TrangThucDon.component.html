@@ -1,11 +1,18 @@
 
 <div class="row w-100" style="padding-top: 20px;">
-  <div class="col-xl-4">  
-     <app-MenuCategoryNav></app-MenuCategoryNav>
+  <div class="col-xl-4">
+     <app-MenuCategoryNav
+        [listMenuCateItems] = "listMenuCateItems"
+        (onClick) = "onChangeListMenuItems($event)"
+        >
+    </app-MenuCategoryNav>
   </div>
   <div class="col-xl-8 mt-1">
       <div class="row">
-        <app-ListMenu></app-ListMenu>
+        <app-ListMenu
+          [listMenuItems] = "listMenuItems"
+
+        ></app-ListMenu>
       </div>
   </div>
 </div>

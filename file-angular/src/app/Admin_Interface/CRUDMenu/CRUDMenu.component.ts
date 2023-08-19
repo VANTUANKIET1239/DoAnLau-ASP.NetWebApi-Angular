@@ -38,10 +38,13 @@ export class CRUDMenuComponent implements OnInit {
        this.menus = data;
        this.Pagination(this.menus);
     });
+   this.onInitMenuCategories();
+
+  }
+  public onInitMenuCategories(){
     this.menucategoryservice.GetMenuCategories().subscribe((data) => {
       this.menucategories = data;
     });
-
   }
   public Pagination(listitem:Menu[]){
       let newitem:Menu[] = [];
@@ -86,16 +89,15 @@ export class CRUDMenuComponent implements OnInit {
         this.removeConfirmPopupCondition = !this.removeConfirmPopupCondition;
   }
 
-  public selectedCate(selectedcategoryid:string){
-      if(selectedcategoryid == "TB"){
+  public selectedCate(menuCateId: string){
+      if(menuCateId == "TB"){
          this.Pagination(this.menus);
       }
       else{
-        this.menuService.GetMenusByCate(selectedcategoryid).subscribe((data) => {
+        this.menuService.GetMenusByCate(menuCateId).subscribe((data) => {
           this.pageIndex = 1;
           this.Pagination(data);
         });
-
       }
   }
 

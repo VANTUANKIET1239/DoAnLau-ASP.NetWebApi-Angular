@@ -51,6 +51,7 @@ import { XacNhanXoaPopUpComponent } from './Admin_Interface/CRUDMenu/XacNhanXoaP
 import { XacNhanXoaDMTDComponent } from './Admin_Interface/CRUDMenuCategory/XacNhanXoaDMTD/XacNhanXoaDMTD.component';
 import { SuaDanhMucThucDonComponent } from './Admin_Interface/CRUDMenuCategory/SuaDanhMucThucDon/SuaDanhMucThucDon.component';
 import { ThemDanhMucThucDonComponent } from './Admin_Interface/CRUDMenuCategory/ThemDanhMucThucDon/ThemDanhMucThucDon.component';
+//import { SelectCustomComponent } from './UiTools/select-custom/select-custom.component';
 
 
 
@@ -106,7 +107,8 @@ import { ThemDanhMucThucDonComponent } from './Admin_Interface/CRUDMenuCategory/
     XacNhanXoaPopUpComponent,
     XacNhanXoaDMTDComponent,
      SuaDanhMucThucDonComponent,
-     ThemDanhMucThucDonComponent
+     ThemDanhMucThucDonComponent,
+    // SelectCustomComponent
 
 
   ],

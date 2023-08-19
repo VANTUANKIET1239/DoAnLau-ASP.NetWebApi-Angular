@@ -1,81 +1,18 @@
 
   <div class="container mt-3">
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
+        <ng-container *ngFor="let item of listMenuItems">
+            <div class="col">
+              <div class="card">
+                <div class="card-body p-3">
+                  <img style="height: 230px;" src="{{item.menuImage}}" class="card-img-top" alt="Product Image">
+                  <div class="mt-2">
+                    <h6 class="card-title">{{item.menuName}}</h6>
+                    <p class="gia-sp card-text">{{item.price | VNDCurrency}}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>    
-      </div>
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Add more card columns as needed -->
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" >                  
-          <div class="card-body p-3">
-            <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/T/i/Tiger-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-            <div class="mt-2">
-              <h5 class="card-title">Product Name</h5>
-              <p class="gia-sp card-text">20.000 đ</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </ng-container>
     </div>
   </div>
-
-  <!-- <div class="card" style="width:  250px;">
-    <img src="https://brand-pcms.ggg.systems/media/catalog/product/cache/fccf9bc1c56510f6f2e84ded9c30a375/H/e/Heineken-330ml_1_1.jpg" class="card-img-top" alt="Product Image">
-    <div class="card-body">
-      <h5 class="card-title">Product Name</h5>
-      <p class="card-text">Price: $9.99</p>
-    </div>
-  </div> -->

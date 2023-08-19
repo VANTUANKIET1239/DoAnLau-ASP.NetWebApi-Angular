@@ -69,7 +69,6 @@ export class CRUDMenuCategoryComponent implements OnInit, OnChanges {
   }
   public ShowHidePopUpMenuEdit(Menu:MenuCategory){
     this.menuCategoryEdit = Menu;
-    console.log(this.menuCategoryEdit);
     this.editpopupconditions = !this.editpopupconditions;
   }
   public HidePopUpMenuEdit(){

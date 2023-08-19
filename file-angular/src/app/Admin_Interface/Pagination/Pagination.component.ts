@@ -13,6 +13,7 @@ export class PaginationComponent implements OnInit,OnChanges, AfterContentChecke
   public totalPageView: number[] = [];
   public prelock: boolean = true;
   public nextlock: boolean = false;
+
   constructor() {
 
    }
